@@ -1,0 +1,38 @@
+﻿using Application.Featues.Brands.Dtos;
+using Application.Featues.Brands.Rules;
+using Application.Services.Repositories;
+using AutoMapper;
+using MediatR;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Application.Featues.Brands.Commands.CreateBrand
+{
+    public class CreateBrandCommand:IRequest<CreatedBrandDto>
+    {
+
+        public string BrandName { get; set; }
+
+
+        class CreateBrandCommandHandler:IRequestHandler<CreateBrandCommand,CreatedBrandDto>
+        {
+            private readonly IMapper mapper;
+            private readonly IBrandRepository brandRepository;
+            private readonly BrandBusinessRules brandBusinessRules;
+            public CreateBrandCommandHandler(IMapper mapper,IBrandRepository brandRepository,BrandBusinessRules brandBusinessRules)
+            {
+                this.mapper = mapper;
+                this.brandBusinessRules = brandBusinessRules;
+                this.brandRepository=brandRepository;
+            }
+
+            public async Task<CreatedBrandDto> Handle(CreateBrandCommand request, CancellationToken cancellationToken)
+            {
+               
+            }
+        }
+    }
+}
