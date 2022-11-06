@@ -17,7 +17,7 @@ namespace Application.Featues.Brands.Commands.DeleteBrand
         public int Id { get; set; }
 
 
-        class DeleteBrandCommandHandler:IRequestHandler<DeleteBrandCommand, DeletedBrandDto>
+       public class DeleteBrandCommandHandler:IRequestHandler<DeleteBrandCommand, DeletedBrandDto>
         {
             private readonly IBrandRepository brandRepository;
             private readonly IMapper mapper;

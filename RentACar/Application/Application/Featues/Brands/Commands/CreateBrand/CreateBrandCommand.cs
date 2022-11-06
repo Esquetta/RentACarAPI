@@ -18,7 +18,7 @@ namespace Application.Featues.Brands.Commands.CreateBrand
         public string BrandName { get; set; }
 
 
-        class CreateBrandCommandHandler:IRequestHandler<CreateBrandCommand,CreatedBrandDto>
+       public class CreateBrandCommandHandler:IRequestHandler<CreateBrandCommand,CreatedBrandDto>
         {
             private readonly IMapper mapper;
             private readonly IBrandRepository brandRepository;
