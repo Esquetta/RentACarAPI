@@ -15,8 +15,9 @@ namespace Application.Featues.Brands.Profiles
         public Profiles()
         {
             CreateMap<CreateBrandCommand, Brand>().ReverseMap();
-
             CreateMap<CreatedBrandDto, Brand>().ReverseMap();
+
+            CreateMap<DeletedBrandDto, Brand>().ReverseMap();
         }
     }
 }
