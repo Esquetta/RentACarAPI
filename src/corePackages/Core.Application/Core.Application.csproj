@@ -23,4 +23,11 @@
     <Folder Include="Pipelines\Caching\" />
     <Folder Include="Pipelines\Authorization\" />
   </ItemGroup>
+
+  
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Kodlama.io\src\corePackages\Core.CrossCuttingConcerns\Core.CrossCuttingConcerns.csproj" />
+    <ProjectReference Include="..\..\..\..\..\Kodlama.io\src\corePackages\Core.Security\Core.Security.csproj" />
+  </ItemGroup>
 </Project>
