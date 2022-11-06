@@ -2,6 +2,7 @@
 using Application.Featues.Brands.Rules;
 using Application.Services.Repositories;
 using AutoMapper;
+using Domain.Entities;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,18 @@ namespace Application.Featues.Brands.Commands.DeleteBrand
 
             public async Task<DeletedBrandDto> Handle(DeleteBrandCommand request, CancellationToken cancellationToken)
             {
-                throw new NotImplementedException();
+                await brandBusinessRules.BrandCheckById(request.Id);
+
+                Brand brand = await brandRepository.GetAsync(x => x.Id == request.Id);
+
+                Brand DeletedBrand = await brandRepository.DeleteAsync(brand);
+
+
+                DeletedBrandDto deletedBrand = mapper.Map<DeletedBrandDto>(DeletedBrand);
+
+                return deletedBrand;
+
+
             }
         }
     }
