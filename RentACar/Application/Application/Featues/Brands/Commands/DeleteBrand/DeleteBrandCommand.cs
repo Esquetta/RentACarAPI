@@ -1,4 +1,5 @@
-﻿using Application.Featues.Brands.Rules;
+﻿using Application.Featues.Brands.Dtos;
+using Application.Featues.Brands.Rules;
 using Application.Services.Repositories;
 using AutoMapper;
 using MediatR;
