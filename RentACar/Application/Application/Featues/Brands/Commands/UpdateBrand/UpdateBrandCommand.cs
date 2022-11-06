@@ -1,4 +1,5 @@
-﻿using Application.Featues.Brands.Rules;
+﻿using Application.Featues.Brands.Dtos;
+using Application.Featues.Brands.Rules;
 using Application.Services.Repositories;
 using AutoMapper;
 using Domain.Entities;
@@ -38,7 +39,7 @@ namespace Application.Featues.Brands.Commands.UpdateBrand
 
                 UpdatedBrandDto updatedBrandDto = mapper.Map<UpdatedBrandDto>(updatedBrand);
 
-                return updatedBrand;
+                return updatedBrandDto;
             }
         }
     }
