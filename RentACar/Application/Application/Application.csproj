@@ -9,7 +9,6 @@
   <ItemGroup>
     <Folder Include="Featues\Brands\Constants\" />
     <Folder Include="Featues\Brands\Queries\" />
-    <Folder Include="Featues\Brands\Models\" />
     <Folder Include="Services\AuthService\" />
   </ItemGroup>
   <ItemGroup>
