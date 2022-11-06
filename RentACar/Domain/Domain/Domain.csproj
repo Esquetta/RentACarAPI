@@ -7,9 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\Kodlama.io\src\corePackages\Core.Persistance\Core.Persistence.csproj" />
-    <ProjectReference Include="..\..\..\..\..\Kodlama.io\src\corePackages\Core.Persistence\Core.Persistence.csproj" />
-    <ProjectReference Include="..\..\..\..\..\Kodlama.io\src\corePackages\Core.Security\Core.Security.csproj" />
+    <ProjectReference Include="..\..\..\src\corePackages\Core.Persistence\Core.Persistence.csproj" />
+    <ProjectReference Include="..\..\..\src\corePackages\Core.Security\Core.Security.csproj" />
   </ItemGroup>
+
+  
 
 </Project>

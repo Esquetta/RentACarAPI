@@ -5,7 +5,6 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="FluentValidation" Version="11.2.2" />
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.2.2" />
@@ -13,21 +12,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="6.0.0" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\Core.CrossCuttingConcerns\Core.CrossCuttingConcerns.csproj" />
     <ProjectReference Include="..\Core.Security\Core.Security.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Pipelines\Caching\" />
-    <Folder Include="Pipelines\Authorization\" />
-  </ItemGroup>
-
-  
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\Kodlama.io\src\corePackages\Core.CrossCuttingConcerns\Core.CrossCuttingConcerns.csproj" />
-    <ProjectReference Include="..\..\..\..\..\Kodlama.io\src\corePackages\Core.Security\Core.Security.csproj" />
   </ItemGroup>
 </Project>
