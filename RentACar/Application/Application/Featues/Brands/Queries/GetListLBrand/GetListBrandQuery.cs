@@ -30,7 +30,7 @@ namespace Application.Featues.Brands.Queries.GetListLBrand
 
             public async Task<BrandListViewModel> Handle(GetListBrandQuery request, CancellationToken cancellationToken)
             {
-                IPaginate<Brand> paginate = await brandRepository.GetListAsync();
+                IPaginate<Brand> paginate = await brandRepository.GetListAsync(index:request.PageRequest.Page,size:request.PageRequest.PageSize);
 
                 BrandListViewModel brandListViewModel = mapper.Map<BrandListViewModel>(paginate);
 

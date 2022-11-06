@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace RentACarAPI.Controllers
 {
-    [Route("api/[controller]/actions")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class BrandController : BaseController
     {
