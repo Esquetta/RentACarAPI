@@ -2,6 +2,7 @@
 using Application.Featues.Brands.Rules;
 using Application.Services.Repositories;
 using AutoMapper;
+using Domain.Entities;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,16 @@ namespace Application.Featues.Brands.Commands.CreateBrand
 
             public async Task<CreatedBrandDto> Handle(CreateBrandCommand request, CancellationToken cancellationToken)
             {
+
+                await brandBusinessRules.BrandNameCannotBeDuplicatedWhenInserted(request.BrandName);
+
+                Brand brand = mapper.Map<Brand>(request);
+
+                Brand addedBrand= await brandRepository.AddAsync(brand);
+
+                CreatedBrandDto createdBrand = mapper.Map<CreatedBrandDto>(addedBrand);
+
+                return createdBrand;
                
             }
         }

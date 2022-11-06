@@ -10,7 +10,6 @@
     <Folder Include="Featues\Brands\Commands\DeleteBrand\" />
     <Folder Include="Featues\Brands\Commands\UpdateBrand\" />
     <Folder Include="Featues\Brands\Constants\" />
-    <Folder Include="Featues\Brands\Profiles\" />
     <Folder Include="Featues\Brands\Queries\" />
     <Folder Include="Featues\Brands\Models\" />
     <Folder Include="Services\AuthService\" />
