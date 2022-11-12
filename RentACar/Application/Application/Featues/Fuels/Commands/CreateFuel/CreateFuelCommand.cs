@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Application.Featues.Fuels.Dtos;
+using Application.Services.Repositories;
+using AutoMapper;
+using MediatR;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +10,17 @@ using System.Threading.Tasks;
 
 namespace Application.Featues.Fuels.Commands.CreateFuel
 {
-    internal class CreateFuelCommand
+    public class CreateFuelCommand:IRequest<CreatedFuelDto>
     {
+        public string FuelName { get; set; }
+
+
+        public class CreateFuelCommandHandler:IRequestHandler<CreateFuelCommand, CreatedFuelDto>
+        {
+            private readonly IMapper mapper;
+            private readonly IFuelRepository fuelRepository;
+            
+
+        }
     }
 }
