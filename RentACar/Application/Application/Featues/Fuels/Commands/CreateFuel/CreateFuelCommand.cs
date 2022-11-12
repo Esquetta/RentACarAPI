@@ -1,4 +1,5 @@
-﻿using Application.Featues.Fuels.Dtos;
+﻿using Application.Featues.Brands.Rules;
+using Application.Featues.Fuels.Dtos;
 using Application.Services.Repositories;
 using AutoMapper;
 using MediatR;
@@ -19,6 +20,13 @@ namespace Application.Featues.Fuels.Commands.CreateFuel
         {
             private readonly IMapper mapper;
             private readonly IFuelRepository fuelRepository;
+            private readonly BrandBusinessRules brandBusinessRules;
+            public CreateFuelCommandHandler(IMapper mapper,IFuelRepository fuelRepository,BrandBusinessRules brandBusinessRules)
+            {
+                this.mapper = mapper;
+                this.brandBusinessRules = brandBusinessRules;
+                this.fuelRepository = fuelRepository;
+            }
             
 
         }
