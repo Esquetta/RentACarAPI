@@ -21,7 +21,6 @@
     <Folder Include="Featues\Fuels\Constants\" />
     <Folder Include="Featues\Fuels\Models\" />
     <Folder Include="Featues\Fuels\Queries\" />
-    <Folder Include="Featues\Fuels\Rules\" />
     <Folder Include="Services\AuthService\" />
   </ItemGroup>
   <ItemGroup>
