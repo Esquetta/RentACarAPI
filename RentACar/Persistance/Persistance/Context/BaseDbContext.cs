@@ -14,6 +14,7 @@ namespace Persistence.Context
     {
         public DbSet<Car> Cars { get; set; }
         public DbSet<Brand> Brands { get; set; }
+        public DbSet<CarModel> CarModels { get; set; }
         public DbSet<CarColor> CarColors { get; set; }
         public DbSet<GearBox> GearBoxes { get; set; }
         public DbSet<Fuel> Fuels { get; set; }
@@ -23,8 +24,7 @@ namespace Persistence.Context
 
         protected IConfiguration Configuration { get; set; }
 
-
-
+        
 
         public BaseDbContext(DbContextOptions dbContextOptions,IConfiguration configuration):base(dbContextOptions)
         {
@@ -32,9 +32,9 @@ namespace Persistence.Context
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //if (!optionsBuilder.IsConfigured)
-            //    base.OnConfiguring(
-            //        optionsBuilder.UseSqlServer(Configuration.GetConnectionString("RentACar")));
+            if (!optionsBuilder.IsConfigured)
+                base.OnConfiguring(
+                    optionsBuilder.UseSqlServer(Configuration.GetConnectionString("RentACar")));
 
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -51,6 +51,9 @@ namespace Persistence.Context
             Brand[] brands = { new(1, "Audi"), new(2, "Ford"), new(3, "Nissan"),new(4,"Toyata"), new(5,"BMW"), new(6,"Mercedes"), new(7,"Porche"), new(8,"Doge"),new(9,"Ferrari"), new(10,"Lamborghini") };
             modelBuilder.Entity<Brand>().HasData(brands);
 
+
+            CarModel[] carModels = { new(1, "A4", 1), new(2, "Focus RS", 2), new(3, "GTR", 3), new(4, "Supra", 4), new(5, "M5", 5), new(6, "AMG GTR", 6), new(7, "GT3", 7), new(8, "Charger", 8) };
+            modelBuilder.Entity<CarModel>().HasData(carModels);
             modelBuilder.Entity<Car>(x => {
                 x.Property("Price").HasColumnType("money");
             });

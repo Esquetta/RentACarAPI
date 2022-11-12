@@ -11,7 +11,7 @@ namespace Domain.Entities
     public class Car : Entity
     {
         public int BrandId { get; set; }
-        public string Model { get; set; }
+        public int CarModelId { get; set; }
         public DateTime ProductionDate { get; set; }
         public decimal Price { get; set; }
         public int HorsePower { get; set; }
@@ -27,16 +27,17 @@ namespace Domain.Entities
         public virtual CarColor CarColor { get; set; }
         public virtual GearBox GearBox { get; set; }
         public virtual Fuel Fuel { get; set; }
+        public virtual CarModel CarModel { get; set; }
+
 
         public Car()
         {
             
         }
-        public Car(int Id, int brandId, string model, DateTime productionDate, decimal price, int horsePower, int carColorId, int gearBoxId, int fuelId, int miles, string Description, bool for_rent) : this()
+        public Car(int Id, int brandId,int carModelId,DateTime productionDate, decimal price, int horsePower, int carColorId, int gearBoxId, int fuelId, int miles, string Description, bool for_rent) : this()
         {
             this.Id = Id;
             this.BrandId = brandId;
-            this.Model = model;
             this.ProductionDate = productionDate;
             this.Price = price;
             this.HorsePower = horsePower;
@@ -46,6 +47,7 @@ namespace Domain.Entities
             this.Miles = miles;
             this.Description = Description;
             this.For_Rent = for_rent;
+            this.CarModelId = carModelId;
 
         }
     }

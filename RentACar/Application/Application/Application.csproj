@@ -16,7 +16,13 @@
     <Folder Include="Featues\CarColor\Dtos\" />
     <Folder Include="Featues\CarColor\Commands\" />
     <Folder Include="Featues\CarColor\Constants\" />
-    <Folder Include="Featues\Fuel\" />
+    <Folder Include="Featues\Fuel\Commands\" />
+    <Folder Include="Featues\Fuel\Constants\" />
+    <Folder Include="Featues\Fuel\Dtos\" />
+    <Folder Include="Featues\Fuel\Models\" />
+    <Folder Include="Featues\Fuel\Profiles\" />
+    <Folder Include="Featues\Fuel\Queries\" />
+    <Folder Include="Featues\Fuel\Rules\" />
     <Folder Include="Services\AuthService\" />
   </ItemGroup>
   <ItemGroup>
