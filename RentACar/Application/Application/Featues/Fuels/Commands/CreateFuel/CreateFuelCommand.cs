@@ -2,6 +2,7 @@
 using Application.Featues.Fuels.Dtos;
 using Application.Services.Repositories;
 using AutoMapper;
+using Domain.Entities;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -30,8 +31,15 @@ namespace Application.Featues.Fuels.Commands.CreateFuel
 
             public async Task<CreatedFuelDto> Handle(CreateFuelCommand request, CancellationToken cancellationToken)
             {
-                await brandBusinessRules.BrandNameCannotBeDuplicatedWhenInserted(request.FuelName);
+                await brandBusinessRules.BrandNameCannotBeDuplicatedWhenInserted(request.FuelType);
 
+                Fuel fuel = mapper.Map<Fuel>(request);
+
+                Fuel addedFuel=await fuelRepository.AddAsync(fuel);
+
+                CreatedFuelDto createdFuelDto = mapper.Map<CreatedFuelDto>(addedFuel);
+
+                return createdFuelDto;
 
 
             }
