@@ -13,7 +13,7 @@ namespace Application.Featues.Fuels.Commands.CreateFuel
 {
     public class CreateFuelCommand:IRequest<CreatedFuelDto>
     {
-        public string FuelName { get; set; }
+        public string FuelType { get; set; }
 
 
         public class CreateFuelCommandHandler:IRequestHandler<CreateFuelCommand, CreatedFuelDto>
@@ -27,8 +27,14 @@ namespace Application.Featues.Fuels.Commands.CreateFuel
                 this.brandBusinessRules = brandBusinessRules;
                 this.fuelRepository = fuelRepository;
             }
-            
 
+            public async Task<CreatedFuelDto> Handle(CreateFuelCommand request, CancellationToken cancellationToken)
+            {
+                await brandBusinessRules.BrandNameCannotBeDuplicatedWhenInserted(request.FuelName);
+
+
+
+            }
         }
     }
 }

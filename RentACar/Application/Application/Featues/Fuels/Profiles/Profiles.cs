@@ -1,4 +1,5 @@
-﻿using Application.Featues.Fuels.Dtos;
+﻿using Application.Featues.Fuels.Commands.CreateFuel;
+using Application.Featues.Fuels.Dtos;
 using AutoMapper;
 using Domain.Entities;
 using System;
@@ -15,6 +16,7 @@ namespace Application.Featues.Fuels.Profiles
         {
 
             CreateMap<Fuel, CreatedFuelDto>().ReverseMap();
+            CreateMap<Fuel, CreateFuelCommand>().ReverseMap();
         }
     }
 }
