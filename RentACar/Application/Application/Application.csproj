@@ -9,6 +9,14 @@
   <ItemGroup>
     <Folder Include="Featues\Brands\Constants\" />
     <Folder Include="Featues\Brands\Queries\" />
+    <Folder Include="Featues\CarColor\Rules\" />
+    <Folder Include="Featues\CarColor\Queries\" />
+    <Folder Include="Featues\CarColor\Profiles\" />
+    <Folder Include="Featues\CarColor\Models\" />
+    <Folder Include="Featues\CarColor\Dtos\" />
+    <Folder Include="Featues\CarColor\Commands\" />
+    <Folder Include="Featues\CarColor\Constants\" />
+    <Folder Include="Featues\Fuel\" />
     <Folder Include="Services\AuthService\" />
   </ItemGroup>
   <ItemGroup>

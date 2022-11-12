@@ -1,8 +1,10 @@
 ﻿using FluentValidation;
 using FluentValidation.Results;
 using MediatR;
+using System.Runtime.InteropServices;
 
 namespace Core.Application.Pipelines.Validation;
+
 
 public class RequestValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     where TRequest : IRequest<TResponse>
