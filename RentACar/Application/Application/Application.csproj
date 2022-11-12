@@ -9,20 +9,20 @@
   <ItemGroup>
     <Folder Include="Featues\Brands\Constants\" />
     <Folder Include="Featues\Brands\Queries\" />
-    <Folder Include="Featues\CarColor\Rules\" />
-    <Folder Include="Featues\CarColor\Queries\" />
-    <Folder Include="Featues\CarColor\Profiles\" />
-    <Folder Include="Featues\CarColor\Models\" />
-    <Folder Include="Featues\CarColor\Dtos\" />
-    <Folder Include="Featues\CarColor\Commands\" />
-    <Folder Include="Featues\CarColor\Constants\" />
-    <Folder Include="Featues\Fuel\Commands\" />
-    <Folder Include="Featues\Fuel\Constants\" />
-    <Folder Include="Featues\Fuel\Dtos\" />
-    <Folder Include="Featues\Fuel\Models\" />
-    <Folder Include="Featues\Fuel\Profiles\" />
-    <Folder Include="Featues\Fuel\Queries\" />
-    <Folder Include="Featues\Fuel\Rules\" />
+    <Folder Include="Featues\CarColors\Rules\" />
+    <Folder Include="Featues\CarColors\Queries\" />
+    <Folder Include="Featues\CarColors\Profiles\" />
+    <Folder Include="Featues\CarColors\Models\" />
+    <Folder Include="Featues\CarColors\Dtos\" />
+    <Folder Include="Featues\CarColors\Commands\" />
+    <Folder Include="Featues\CarColors\Constants\" />
+    <Folder Include="Featues\Fuels\Commands\" />
+    <Folder Include="Featues\Fuels\Constants\" />
+    <Folder Include="Featues\Fuels\Dtos\" />
+    <Folder Include="Featues\Fuels\Models\" />
+    <Folder Include="Featues\Fuels\Profiles\" />
+    <Folder Include="Featues\Fuels\Queries\" />
+    <Folder Include="Featues\Fuels\Rules\" />
     <Folder Include="Services\AuthService\" />
   </ItemGroup>
   <ItemGroup>
