@@ -24,7 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Application\Application\Application.csproj" />
     <ProjectReference Include="..\..\Persistance\Persistance\Persistence.csproj" />
   </ItemGroup>
 
