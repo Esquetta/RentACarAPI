@@ -19,9 +19,7 @@
     <Folder Include="Featues\Fuels\Commands\DeleteFuel\" />
     <Folder Include="Featues\Fuels\Commands\UpdateFuel\" />
     <Folder Include="Featues\Fuels\Constants\" />
-    <Folder Include="Featues\Fuels\Dtos\" />
     <Folder Include="Featues\Fuels\Models\" />
-    <Folder Include="Featues\Fuels\Profiles\" />
     <Folder Include="Featues\Fuels\Queries\" />
     <Folder Include="Featues\Fuels\Rules\" />
     <Folder Include="Services\AuthService\" />
