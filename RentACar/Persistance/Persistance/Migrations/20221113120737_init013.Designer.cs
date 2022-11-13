@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Persistence.Context;
 
@@ -11,9 +12,10 @@ using Persistence.Context;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(BaseDbContext))]
-    partial class BaseDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221113120737_init013")]
+    partial class init013
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -262,8 +264,6 @@ namespace Persistence.Migrations
 
                     b.HasIndex("CarColorId");
 
-                    b.HasIndex("CarModelId");
-
                     b.HasIndex("FuelId");
 
                     b.HasIndex("GearBoxId");
@@ -338,10 +338,7 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Entities.CarModel", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<int>("BrandId")
                         .HasColumnType("int");
@@ -599,12 +596,6 @@ namespace Persistence.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Domain.Entities.CarModel", "CarModel")
-                        .WithMany("Cars")
-                        .HasForeignKey("CarModelId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("Domain.Entities.Fuel", "Fuel")
                         .WithMany("Cars")
                         .HasForeignKey("FuelId")
@@ -621,8 +612,6 @@ namespace Persistence.Migrations
 
                     b.Navigation("CarColor");
 
-                    b.Navigation("CarModel");
-
                     b.Navigation("Fuel");
 
                     b.Navigation("GearBox");
@@ -635,6 +624,11 @@ namespace Persistence.Migrations
                         .HasForeignKey("BrandId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("Domain.Entities.Car", null)
+                        .WithOne("CarModel")
+                        .HasForeignKey("Domain.Entities.CarModel", "Id")
+                        .OnDelete(DeleteBehavior.NoAction);
 
                     b.Navigation("Brand");
                 });
@@ -696,14 +690,12 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Entities.Car", b =>
                 {
+                    b.Navigation("CarModel")
+                        .IsRequired();
+
                     b.Navigation("Photos");
 
                     b.Navigation("RendDetails");
-                });
-
-            modelBuilder.Entity("Domain.Entities.CarModel", b =>
-                {
-                    b.Navigation("Cars");
                 });
 
             modelBuilder.Entity("Domain.Entities.Fuel", b =>

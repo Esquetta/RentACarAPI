@@ -7,7 +7,9 @@ namespace Domain.Entities
         public string ModelName { get; set; }
         public int BrandId { get; set; }
         public virtual Brand Brand { get; set; }
-        public virtual List<Car> Cars { get; set; }
+        public List<Car> Cars { get; set; }
+
+
 
         public CarModel()
         {

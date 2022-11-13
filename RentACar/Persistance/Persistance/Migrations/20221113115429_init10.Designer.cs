@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Persistence.Context;
 
@@ -11,9 +12,10 @@ using Persistence.Context;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(BaseDbContext))]
-    partial class BaseDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221113115429_init10")]
+    partial class init10
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -231,6 +233,9 @@ namespace Persistence.Migrations
                     b.Property<int>("CarModelId")
                         .HasColumnType("int");
 
+                    b.Property<int>("CarModelId1")
+                        .HasColumnType("int");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -263,6 +268,8 @@ namespace Persistence.Migrations
                     b.HasIndex("CarColorId");
 
                     b.HasIndex("CarModelId");
+
+                    b.HasIndex("CarModelId1");
 
                     b.HasIndex("FuelId");
 
@@ -600,9 +607,15 @@ namespace Persistence.Migrations
                         .IsRequired();
 
                     b.HasOne("Domain.Entities.CarModel", "CarModel")
-                        .WithMany("Cars")
+                        .WithMany()
                         .HasForeignKey("CarModelId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Entities.CarModel", null)
+                        .WithMany("Cars")
+                        .HasForeignKey("CarModelId1")
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("Domain.Entities.Fuel", "Fuel")
