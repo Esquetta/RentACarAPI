@@ -15,9 +15,10 @@ namespace Application.Featues.Fuels.Commands.DeleteFuel
     public class UpdateFuelCommand:IRequest<UpdatedFuelDto>
     {
         public int Id { get; set; }
+        public string FuelType { get; set; }
 
 
-        public class UpdateFuelCommandHandler : IRequestHandler<UpdateFuelCommand, DeletedFuelDto>
+        public class UpdateFuelCommandHandler : IRequestHandler<UpdateFuelCommand, UpdatedFuelDto>
         {
             private readonly IMapper mapper;
             private readonly IFuelRepository fuelRepository;
@@ -30,13 +31,13 @@ namespace Application.Featues.Fuels.Commands.DeleteFuel
                 this.fuelRepository = fuelRepository;
             }
 
-            public async Task<DeletedFuelDto> Handle(UpdateFuelCommand request, CancellationToken cancellationToken)
+            public async Task<UpdatedFuelDto> Handle(UpdateFuelCommand request, CancellationToken cancellationToken)
             {
-                Fuel fuel = await fuelBusinessRules.IsFuelExists(request.Id);
+                await fuelBusinessRules.FuelCannotBeDuplicatedWhenUpdated(request.FuelType);
+                Fuel fuel = mapper.Map<Fuel>(request);
+                Fuel updatedFuel = await fuelRepository.DeleteAsync(fuel);
 
-                Fuel deletedFuel = await fuelRepository.DeleteAsync(fuel);
-
-                DeletedFuelDto deletedFuelDto = mapper.Map<DeletedFuelDto>(deletedFuel);
+                UpdatedFuelDto deletedFuelDto = mapper.Map<UpdatedFuelDto>(updatedFuel);
 
                 return deletedFuelDto;
             }
