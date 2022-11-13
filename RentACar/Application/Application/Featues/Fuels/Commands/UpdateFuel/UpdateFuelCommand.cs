@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Application.Featues.Fuels.Commands.DeleteFuel
 {
-    public class DeleteFuelCommand:IRequest<DeletedFuelDto>
+    public class UpdateFuelCommand:IRequest<DeletedFuelDto>
     {
         public int Id { get; set; }
 
