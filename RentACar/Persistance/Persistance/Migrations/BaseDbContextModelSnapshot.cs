@@ -228,6 +228,9 @@ namespace Persistence.Migrations
                     b.Property<int>("CarColorId")
                         .HasColumnType("int");
 
+                    b.Property<int>("CarModelId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -247,10 +250,6 @@ namespace Persistence.Migrations
                     b.Property<int>("Miles")
                         .HasColumnType("int");
 
-                    b.Property<string>("Model")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<decimal>("Price")
                         .HasColumnType("money");
 
@@ -262,6 +261,8 @@ namespace Persistence.Migrations
                     b.HasIndex("BrandId");
 
                     b.HasIndex("CarColorId");
+
+                    b.HasIndex("CarModelId");
 
                     b.HasIndex("FuelId");
 
@@ -331,6 +332,78 @@ namespace Persistence.Migrations
                         {
                             Id = 9,
                             Color = "Orange"
+                        });
+                });
+
+            modelBuilder.Entity("Domain.Entities.CarModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("BrandId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ModelName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BrandId");
+
+                    b.ToTable("CarModels");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            BrandId = 1,
+                            ModelName = "A4"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            BrandId = 2,
+                            ModelName = "Focus RS"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            BrandId = 3,
+                            ModelName = "GTR"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            BrandId = 4,
+                            ModelName = "Supra"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            BrandId = 5,
+                            ModelName = "M5"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            BrandId = 6,
+                            ModelName = "AMG GTR"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            BrandId = 7,
+                            ModelName = "GT3"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            BrandId = 8,
+                            ModelName = "Charger"
                         });
                 });
 
@@ -526,6 +599,12 @@ namespace Persistence.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Domain.Entities.CarModel", "CarModel")
+                        .WithMany()
+                        .HasForeignKey("CarModelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Domain.Entities.Fuel", "Fuel")
                         .WithMany("Cars")
                         .HasForeignKey("FuelId")
@@ -542,9 +621,22 @@ namespace Persistence.Migrations
 
                     b.Navigation("CarColor");
 
+                    b.Navigation("CarModel");
+
                     b.Navigation("Fuel");
 
                     b.Navigation("GearBox");
+                });
+
+            modelBuilder.Entity("Domain.Entities.CarModel", b =>
+                {
+                    b.HasOne("Domain.Entities.Brand", "Brand")
+                        .WithMany("Models")
+                        .HasForeignKey("BrandId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Brand");
                 });
 
             modelBuilder.Entity("Domain.Entities.Photo", b =>
@@ -598,6 +690,8 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Entities.Brand", b =>
                 {
                     b.Navigation("Cars");
+
+                    b.Navigation("Models");
                 });
 
             modelBuilder.Entity("Domain.Entities.Car", b =>
