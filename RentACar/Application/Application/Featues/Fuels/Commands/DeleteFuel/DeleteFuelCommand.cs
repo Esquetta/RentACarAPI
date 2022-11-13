@@ -17,7 +17,7 @@ namespace Application.Featues.Fuels.Commands.DeleteFuel
         public int Id { get; set; }
 
 
-        public class DeleteFuelCommandHandler : IRequestHandler<UpdateFuelCommand, DeletedFuelDto>
+        public class DeleteFuelCommandHandler : IRequestHandler<DeleteFuelCommand, DeletedFuelDto>
         {
             private readonly IMapper mapper;
             private readonly IFuelRepository fuelRepository;
@@ -30,7 +30,7 @@ namespace Application.Featues.Fuels.Commands.DeleteFuel
                 this.fuelRepository = fuelRepository;
             }
 
-            public async Task<DeletedFuelDto> Handle(UpdateFuelCommand request, CancellationToken cancellationToken)
+            public async Task<DeletedFuelDto> Handle(DeleteFuelCommand request, CancellationToken cancellationToken)
             {
                 Fuel fuel = await fuelBusinessRules.IsFuelExists(request.Id);
 
