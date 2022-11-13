@@ -22,5 +22,14 @@ namespace Application.Featues.Fuels.Rules
             Fuel fuel = await fuelRepository.GetAsync(x=>x.FuelType==fuelName);
             if (fuel == null) throw new BusinessException("Fuel exist."); 
         }
+
+        public async Task<Fuel> IsFuelExists(int id)
+        {
+            Fuel fuel = await fuelRepository.GetAsync(x => x.Id == id);
+            if (fuel == null) throw new BusinessException("Fuel not exists.");
+
+            return fuel;
+
+        }
     }
 }
