@@ -11,7 +11,7 @@ namespace Application.Featues.Fuels.Commands.CreateFuel
     {
         public CreateFuelCommandValidator()
         {
-            RuleFor(x=>x.FuelName).NotEmpty();
+            RuleFor(x=>x.FuelType).NotEmpty();
                 
         }
     }
