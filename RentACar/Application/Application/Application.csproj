@@ -17,7 +17,6 @@
     <Folder Include="Featues\CarColors\Commands\" />
     <Folder Include="Featues\CarColors\Constants\" />
     <Folder Include="Featues\Fuels\Constants\" />
-    <Folder Include="Featues\Fuels\Models\" />
     <Folder Include="Services\AuthService\" />
   </ItemGroup>
   <ItemGroup>
