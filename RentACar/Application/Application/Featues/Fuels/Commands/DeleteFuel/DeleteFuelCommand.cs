@@ -12,12 +12,12 @@ using System.Threading.Tasks;
 
 namespace Application.Featues.Fuels.Commands.DeleteFuel
 {
-    public class DeleteFuelCommand:IRequest<DeletedFuelDto>
+    public class UpdateFuelCommand:IRequest<DeletedFuelDto>
     {
         public int Id { get; set; }
 
 
-        public class DeleteFuelCommandHandler : IRequestHandler<DeleteFuelCommand, DeletedFuelDto>
+        public class DeleteFuelCommandHandler : IRequestHandler<UpdateFuelCommand, DeletedFuelDto>
         {
             private readonly IMapper mapper;
             private readonly IFuelRepository fuelRepository;
@@ -30,7 +30,7 @@ namespace Application.Featues.Fuels.Commands.DeleteFuel
                 this.fuelRepository = fuelRepository;
             }
 
-            public async Task<DeletedFuelDto> Handle(DeleteFuelCommand request, CancellationToken cancellationToken)
+            public async Task<DeletedFuelDto> Handle(UpdateFuelCommand request, CancellationToken cancellationToken)
             {
                 Fuel fuel = await fuelBusinessRules.IsFuelExists(request.Id);
 

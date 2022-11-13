@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Application.Featues.Fuels.Commands.DeleteFuel
 {
-    public class DeleteFuelCommandValidator:AbstractValidator<DeleteFuelCommand>
+    public class DeleteFuelCommandValidator:AbstractValidator<UpdateFuelCommand>
     {
         public DeleteFuelCommandValidator()
         {

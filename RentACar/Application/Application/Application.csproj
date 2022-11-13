@@ -16,7 +16,6 @@
     <Folder Include="Featues\CarColors\Dtos\" />
     <Folder Include="Featues\CarColors\Commands\" />
     <Folder Include="Featues\CarColors\Constants\" />
-    <Folder Include="Featues\Fuels\Commands\UpdateFuel\" />
     <Folder Include="Featues\Fuels\Constants\" />
     <Folder Include="Featues\Fuels\Models\" />
     <Folder Include="Featues\Fuels\Queries\" />
