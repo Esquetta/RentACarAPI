@@ -12,18 +12,18 @@ using System.Threading.Tasks;
 
 namespace Application.Featues.Fuels.Commands.DeleteFuel
 {
-    public class UpdateFuelCommand:IRequest<DeletedFuelDto>
+    public class UpdateFuelCommand:IRequest<UpdatedFuelDto>
     {
         public int Id { get; set; }
 
 
-        public class DeleteFuelCommandHandler : IRequestHandler<UpdateFuelCommand, DeletedFuelDto>
+        public class UpdateFuelCommandHandler : IRequestHandler<UpdateFuelCommand, DeletedFuelDto>
         {
             private readonly IMapper mapper;
             private readonly IFuelRepository fuelRepository;
             private readonly FuelBusinessRules fuelBusinessRules;
 
-            public DeleteFuelCommandHandler(IMapper mapper, IFuelRepository fuelRepository,FuelBusinessRules fuelBusinessRules)
+            public UpdateFuelCommandHandler(IMapper mapper, IFuelRepository fuelRepository,FuelBusinessRules fuelBusinessRules)
             {
                 this.fuelBusinessRules= fuelBusinessRules;
                 this.mapper = mapper;
