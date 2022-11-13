@@ -602,7 +602,7 @@ namespace Persistence.Migrations
                     b.HasOne("Domain.Entities.CarModel", "CarModel")
                         .WithMany("Cars")
                         .HasForeignKey("CarModelId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Domain.Entities.Fuel", "Fuel")
@@ -631,7 +631,7 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Entities.CarModel", b =>
                 {
                     b.HasOne("Domain.Entities.Brand", "Brand")
-                        .WithMany("Models")
+                        .WithMany("CarModels")
                         .HasForeignKey("BrandId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -689,9 +689,9 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Entities.Brand", b =>
                 {
-                    b.Navigation("Cars");
+                    b.Navigation("CarModels");
 
-                    b.Navigation("Models");
+                    b.Navigation("Cars");
                 });
 
             modelBuilder.Entity("Domain.Entities.Car", b =>

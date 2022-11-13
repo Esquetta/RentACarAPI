@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -41,9 +42,6 @@ namespace Persistence.Context
         {
 
 
-            modelBuilder.Entity<Car>().HasOne(x=>x.Brand).WithMany(x => x.Cars).HasForeignKey(x => x.BrandId);
-            modelBuilder.Entity<Car>().HasOne(x => x.CarModel).WithMany(x=>x.Cars).HasForeignKey(x=>x.CarModelId).OnDelete(DeleteBehavior.Restrict);
-
             Fuel[] fuels ={new(1,"Gasoline"),new(2,"Motorine"),new(3,"Electrical")};
             modelBuilder.Entity<Fuel>().HasData(fuels);
 
@@ -67,9 +65,12 @@ namespace Persistence.Context
             });
             modelBuilder.Entity<RentDetail>().HasKey(x =>new { x.RentId,x.CarId});
 
+
             
-            
-            
+
+
+
+
         }
     }
 }

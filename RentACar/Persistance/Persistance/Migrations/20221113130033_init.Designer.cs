@@ -12,7 +12,7 @@ using Persistence.Context;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(BaseDbContext))]
-    [Migration("20221113114412_init")]
+    [Migration("20221113130033_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -633,7 +633,7 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Entities.CarModel", b =>
                 {
                     b.HasOne("Domain.Entities.Brand", "Brand")
-                        .WithMany("Models")
+                        .WithMany("CarModels")
                         .HasForeignKey("BrandId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -691,9 +691,9 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Entities.Brand", b =>
                 {
-                    b.Navigation("Cars");
+                    b.Navigation("CarModels");
 
-                    b.Navigation("Models");
+                    b.Navigation("Cars");
                 });
 
             modelBuilder.Entity("Domain.Entities.Car", b =>
