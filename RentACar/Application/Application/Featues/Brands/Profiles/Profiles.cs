@@ -1,4 +1,5 @@
 ﻿using Application.Featues.Brands.Commands.CreateBrand;
+using Application.Featues.Brands.Commands.UpdateBrand;
 using Application.Featues.Brands.Dtos;
 using Application.Featues.Brands.Models;
 using AutoMapper;
@@ -21,8 +22,9 @@ namespace Application.Featues.Brands.Profiles
 
             CreateMap<DeletedBrandDto, Brand>().ReverseMap();
 
-            CreateMap<CreateBrandCommand, Brand>().ReverseMap();
-            CreateMap<CreatedBrandDto, Brand>().ReverseMap();
+            CreateMap<UpdateBrandCommand, Brand>().ReverseMap();
+            CreateMap<UpdatedBrandDto, Brand>().ReverseMap();
+            
 
             CreateMap<BrandListViewDto, Brand>().ReverseMap();
             CreateMap<IPaginate<Brand>, BrandListViewModel>().ReverseMap();

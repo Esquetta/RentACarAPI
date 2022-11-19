@@ -228,7 +228,8 @@ namespace Persistence.Migrations
                     b.Property<int>("CarColorId")
                         .HasColumnType("int");
 
-                    b.Property<int>("CarModelId")
+                    b.Property<int?>("CarModelId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
@@ -262,8 +263,7 @@ namespace Persistence.Migrations
 
                     b.HasIndex("CarColorId");
 
-                    b.HasIndex("CarModelId")
-                        .IsUnique();
+                    b.HasIndex("CarModelId");
 
                     b.HasIndex("FuelId");
 
@@ -601,8 +601,8 @@ namespace Persistence.Migrations
                         .IsRequired();
 
                     b.HasOne("Domain.Entities.CarModel", "CarModel")
-                        .WithOne()
-                        .HasForeignKey("Domain.Entities.Car", "CarModelId")
+                        .WithMany("Cars")
+                        .HasForeignKey("CarModelId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
@@ -700,6 +700,11 @@ namespace Persistence.Migrations
                     b.Navigation("Photos");
 
                     b.Navigation("RendDetails");
+                });
+
+            modelBuilder.Entity("Domain.Entities.CarModel", b =>
+                {
+                    b.Navigation("Cars");
                 });
 
             modelBuilder.Entity("Domain.Entities.Fuel", b =>

@@ -11,7 +11,7 @@ namespace Domain.Entities
     public class Car : Entity
     {
         public int BrandId { get; set; }
-        public int CarModelId { get; set; }
+        public int? CarModelId { get; set; }
         public DateTime ProductionDate { get; set; }
         public decimal Price { get; set; }
         public int HorsePower { get; set; }

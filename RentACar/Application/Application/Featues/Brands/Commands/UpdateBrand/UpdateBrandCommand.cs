@@ -31,13 +31,13 @@ namespace Application.Featues.Brands.Commands.UpdateBrand
 
             public async Task<UpdatedBrandDto> Handle(UpdateBrandCommand request, CancellationToken cancellationToken)
             {
-                await brandBusinessRules.BrandCheckById(request.Id);
-
+                await brandBusinessRules.BrandNameCannotBeDuplicatedWhenUpdated(request.BrandName);
+               
                 Brand brand = mapper.Map<Brand>(request);
 
                 Brand updatedBrand = await brandRepository.UpdateAsync(brand);
 
-                UpdatedBrandDto updatedBrandDto = mapper.Map<UpdatedBrandDto>(updatedBrand);
+                UpdatedBrandDto  updatedBrandDto= mapper.Map<UpdatedBrandDto>(updatedBrand);
 
                 return updatedBrandDto;
             }

@@ -12,8 +12,8 @@ using Persistence.Context;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(BaseDbContext))]
-    [Migration("20221113130847_init2")]
-    partial class init2
+    [Migration("20221119093357_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -230,7 +230,8 @@ namespace Persistence.Migrations
                     b.Property<int>("CarColorId")
                         .HasColumnType("int");
 
-                    b.Property<int>("CarModelId")
+                    b.Property<int?>("CarModelId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
@@ -264,8 +265,7 @@ namespace Persistence.Migrations
 
                     b.HasIndex("CarColorId");
 
-                    b.HasIndex("CarModelId")
-                        .IsUnique();
+                    b.HasIndex("CarModelId");
 
                     b.HasIndex("FuelId");
 
@@ -603,9 +603,9 @@ namespace Persistence.Migrations
                         .IsRequired();
 
                     b.HasOne("Domain.Entities.CarModel", "CarModel")
-                        .WithOne()
-                        .HasForeignKey("Domain.Entities.Car", "CarModelId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .WithMany("Cars")
+                        .HasForeignKey("CarModelId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Domain.Entities.Fuel", "Fuel")
@@ -702,6 +702,11 @@ namespace Persistence.Migrations
                     b.Navigation("Photos");
 
                     b.Navigation("RendDetails");
+                });
+
+            modelBuilder.Entity("Domain.Entities.CarModel", b =>
+                {
+                    b.Navigation("Cars");
                 });
 
             modelBuilder.Entity("Domain.Entities.Fuel", b =>
