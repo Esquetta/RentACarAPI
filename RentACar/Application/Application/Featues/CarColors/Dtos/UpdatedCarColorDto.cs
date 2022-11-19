@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Application.Featues.CarColors.Dtos
 {
-    public class CreatedCarColor
+    public class UpdatedCarColorDto
     {
+        public int Id { get; set; }
         public string Color { get; set; }
     }
 }

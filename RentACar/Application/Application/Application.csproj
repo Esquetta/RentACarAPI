@@ -9,11 +9,6 @@
   <ItemGroup>
     <Folder Include="Featues\Brands\Constants\" />
     <Folder Include="Featues\Brands\Queries\" />
-    <Folder Include="Featues\CarColors\Commands\DeleteCarColor\" />
-    <Folder Include="Featues\CarColors\Commands\UpdateCarColor\" />
-    <Folder Include="Featues\CarColors\Queries\" />
-    <Folder Include="Featues\CarColors\Profiles\" />
-    <Folder Include="Featues\CarColors\Models\" />
     <Folder Include="Featues\CarColors\Constants\" />
     <Folder Include="Featues\Fuels\Constants\" />
     <Folder Include="Services\AuthService\" />
