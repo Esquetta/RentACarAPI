@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Application.Featues.CarColors.Dtos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace Application.Featues.CarColors.Models
 {
     public class CarColorListViewModel
     {
-        public List<CarColorListViewModel> Items { get; set; }
+        public List<CarColorListDto> Items { get; set; }
     }
 }

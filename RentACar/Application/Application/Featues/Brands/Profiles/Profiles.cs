@@ -28,6 +28,10 @@ namespace Application.Featues.Brands.Profiles
 
             CreateMap<BrandListViewDto, Brand>().ReverseMap();
             CreateMap<IPaginate<Brand>, BrandListViewModel>().ReverseMap();
+
+            CreateMap<CarModelListViewDto, CarModel>().ReverseMap();
+            CreateMap<BrandModelsListViewDto, Brand>().ReverseMap();
+            CreateMap<IPaginate<Brand>, BrandModelsListViewModel>().ReverseMap();
         }
     }
 }

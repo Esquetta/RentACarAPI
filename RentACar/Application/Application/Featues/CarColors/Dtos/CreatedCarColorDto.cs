@@ -8,6 +8,7 @@ namespace Application.Featues.CarColors.Dtos
 {
     public class CreatedCarColorDto
     {
+        public int Id { get; set; }
         public string Color { get; set; }
     }
 }

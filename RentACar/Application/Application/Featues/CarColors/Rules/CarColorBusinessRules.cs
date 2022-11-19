@@ -20,12 +20,12 @@ namespace Application.Featues.CarColors.Rules
         public async Task CarColorCannotBeDuplicatedWhenInserted(string colorName)
         {
             CarColor carColor = await carColorRepository.GetAsync(x => x.Color == colorName);
-            if (carColor == null) throw new BusinessException("CarColor exist.");
+            if (carColor != null) throw new BusinessException("CarColor exist.");
         }
         public async Task CarColorCannotBeDuplicatedWhenUpdated(string colorName)
         {
             CarColor carColor = await carColorRepository.GetAsync(x => x.Color == colorName);
-            if (carColor == null) throw new BusinessException("CarColor exist.");
+            if (carColor != null) throw new BusinessException("CarColor exist.");
         }
 
         public async Task<CarColor> IsCarColorExists(int id)
