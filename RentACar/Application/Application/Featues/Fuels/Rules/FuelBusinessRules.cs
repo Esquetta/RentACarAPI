@@ -20,12 +20,12 @@ namespace Application.Featues.Fuels.Rules
         public async Task FuelCannotBeDuplicatedWhenInserted(string fuelName)
         {
             Fuel fuel = await fuelRepository.GetAsync(x=>x.FuelType==fuelName);
-            if (fuel == null) throw new BusinessException("Fuel exist."); 
+            if (fuel != null) throw new BusinessException("Fuel exist."); 
         }
         public async Task FuelCannotBeDuplicatedWhenUpdated(string fuelName)
         {
             Fuel fuel = await fuelRepository.GetAsync(x => x.FuelType == fuelName);
-            if (fuel == null) throw new BusinessException("Fuel exist.");
+            if (fuel != null) throw new BusinessException("Fuel exist.");
         }
 
         public async Task<Fuel> IsFuelExists(int id)

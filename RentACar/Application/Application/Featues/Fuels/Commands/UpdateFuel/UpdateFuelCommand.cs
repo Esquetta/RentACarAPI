@@ -35,7 +35,7 @@ namespace Application.Featues.Fuels.Commands.DeleteFuel
             {
                 await fuelBusinessRules.FuelCannotBeDuplicatedWhenUpdated(request.FuelType);
                 Fuel fuel = mapper.Map<Fuel>(request);
-                Fuel updatedFuel = await fuelRepository.DeleteAsync(fuel);
+                Fuel updatedFuel = await fuelRepository.UpdateAsync(fuel);
 
                 UpdatedFuelDto deletedFuelDto = mapper.Map<UpdatedFuelDto>(updatedFuel);
 

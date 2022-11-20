@@ -23,16 +23,16 @@ namespace Application.Featues.Brands.Queries.GetListBrandsWithModels
         public class GetListBrandsWithModelsQueryHandler:IRequestHandler<GetListBrandsWithModelsQuery, BrandModelsListViewModel>
         {
             private readonly IMapper mapper;
-            private readonly IBrandRepository brandRepository;
-            public GetListBrandsWithModelsQueryHandler(IMapper mapper, IBrandRepository brandRepository)
+            private readonly IBrandRepository gearBoxRepository;
+            public GetListBrandsWithModelsQueryHandler(IMapper mapper, IBrandRepository gearBoxRepository)
             {
                 this.mapper = mapper;
-                this.brandRepository = brandRepository;
+                this.gearBoxRepository = gearBoxRepository;
             }
 
             public async Task<BrandModelsListViewModel> Handle(GetListBrandsWithModelsQuery request, CancellationToken cancellationToken)
             {
-                IPaginate<Brand> paginate = await brandRepository.GetListAsync(include:x=>x.Include(x=>x.CarModels),index:request.PageRequest.Page,size:request.PageRequest.PageSize);
+                IPaginate<Brand> paginate = await gearBoxRepository.GetListAsync(include:x=>x.Include(x=>x.CarModels),index:request.PageRequest.Page,size:request.PageRequest.PageSize);
 
                 BrandModelsListViewModel brandModelsListViewModel = mapper.Map<BrandModelsListViewModel>(paginate);
 

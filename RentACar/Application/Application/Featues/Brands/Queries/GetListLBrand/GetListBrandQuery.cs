@@ -20,17 +20,17 @@ namespace Application.Featues.Brands.Queries.GetListLBrand
 
         public class GetListBrandQueryHandler:IRequestHandler<GetListBrandQuery,BrandListViewModel>
         {
-            private readonly IBrandRepository brandRepository;
+            private readonly IBrandRepository gearBoxRepository;
             private readonly IMapper mapper;
-            public GetListBrandQueryHandler(IBrandRepository brandRepository, IMapper mapper)
+            public GetListBrandQueryHandler(IBrandRepository gearBoxRepository, IMapper mapper)
             {
-                this.brandRepository = brandRepository;
+                this.gearBoxRepository = gearBoxRepository;
                 this.mapper = mapper;
             }
 
             public async Task<BrandListViewModel> Handle(GetListBrandQuery request, CancellationToken cancellationToken)
             {
-                IPaginate<Brand> paginate = await brandRepository.GetListAsync(index:request.PageRequest.Page,size:request.PageRequest.PageSize);
+                IPaginate<Brand> paginate = await gearBoxRepository.GetListAsync(index:request.PageRequest.Page,size:request.PageRequest.PageSize);
 
                 BrandListViewModel brandListViewModel = mapper.Map<BrandListViewModel>(paginate);
 
