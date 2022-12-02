@@ -1,4 +1,5 @@
-﻿using Domain.Entities;
+﻿using Application.Featues.CarModels.Dtos;
+using Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +15,5 @@ namespace Application.Featues.Brands.Dtos
 
         public List<CarModelListViewDto> CarModels { get; set; }
     }
-    public class CarModelListViewDto
-    {
-        public int Id { get; set; }
-        public string ModelName { get; set; }
-    }
+    
 }

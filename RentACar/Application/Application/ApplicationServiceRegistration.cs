@@ -1,5 +1,6 @@
 ﻿using Application.Featues.Brands.Rules;
 using Application.Featues.CarColors.Rules;
+using Application.Featues.CarModels.Rules;
 using Application.Featues.Fuels.Rules;
 using Application.Featues.GearBoxses.Rules;
 using Core.Application.Pipelines.Validation;
@@ -27,6 +28,7 @@ namespace Application
             services.AddScoped<FuelBusinessRules>();
             services.AddScoped<CarColorBusinessRules>();
             services.AddScoped<GearBoxBusinessRules>();
+            services.AddScoped<CarModelBusinessRules>();
 
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(AuthorizationBehavior<,>));
