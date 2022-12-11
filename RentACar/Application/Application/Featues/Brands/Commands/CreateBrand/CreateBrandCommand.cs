@@ -21,13 +21,13 @@ namespace Application.Featues.Brands.Commands.CreateBrand
        public class CreateBrandCommandHandler:IRequestHandler<CreateBrandCommand,CreatedBrandDto>
         {
             private readonly IMapper mapper;
-            private readonly IBrandRepository gearBoxRepository;
+            private readonly IBrandRepository brandRepository;
             private readonly BrandBusinessRules brandBusinessRules;
-            public CreateBrandCommandHandler(IMapper mapper,IBrandRepository gearBoxRepository,BrandBusinessRules brandBusinessRules)
+            public CreateBrandCommandHandler(IMapper mapper,IBrandRepository brandRepository, BrandBusinessRules brandBusinessRules)
             {
                 this.mapper = mapper;
                 this.brandBusinessRules = brandBusinessRules;
-                this.gearBoxRepository=gearBoxRepository;
+                this.brandRepository = brandRepository;
             }
 
             public async Task<CreatedBrandDto> Handle(CreateBrandCommand request, CancellationToken cancellationToken)
@@ -37,7 +37,7 @@ namespace Application.Featues.Brands.Commands.CreateBrand
 
                 Brand brand = mapper.Map<Brand>(request);
 
-                Brand addedBrand= await gearBoxRepository.AddAsync(brand);
+                Brand addedBrand= await brandRepository.AddAsync(brand);
 
                 CreatedBrandDto createdBrand = mapper.Map<CreatedBrandDto>(addedBrand);
 

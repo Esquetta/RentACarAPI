@@ -19,12 +19,12 @@ namespace Application.Featues.Brands.Commands.UpdateBrand
 
         public class UpdateBrandCommandHandler:IRequestHandler<UpdateBrandCommand,UpdatedBrandDto>
         {
-            private readonly IBrandRepository gearBoxRepository;
+            private readonly IBrandRepository brandRepository;
             private readonly IMapper mapper;
             private readonly BrandBusinessRules brandBusinessRules;
-            public UpdateBrandCommandHandler(IBrandRepository gearBoxRepository, IMapper mapper, BrandBusinessRules brandBusinessRules)
+            public UpdateBrandCommandHandler(IBrandRepository brandRepository, IMapper mapper, BrandBusinessRules brandBusinessRules)
             {
-                this.gearBoxRepository = gearBoxRepository;
+                this.brandRepository = brandRepository;
                 this.mapper = mapper;
                 this.brandBusinessRules = brandBusinessRules;
             }
@@ -35,7 +35,7 @@ namespace Application.Featues.Brands.Commands.UpdateBrand
                
                 Brand brand = mapper.Map<Brand>(request);
 
-                Brand updatedBrand = await gearBoxRepository.UpdateAsync(brand);
+                Brand updatedBrand = await brandRepository.UpdateAsync(brand);
 
                 UpdatedBrandDto  updatedBrandDto= mapper.Map<UpdatedBrandDto>(updatedBrand);
 
