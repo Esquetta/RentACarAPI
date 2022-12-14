@@ -13,6 +13,15 @@
     <Folder Include="Featues\Cars\Constants\" />
     <Folder Include="Featues\Fuels\Constants\" />
     <Folder Include="Featues\GearBoxses\Constants\" />
+    <Folder Include="Featues\Rents\Commands\CreateRent\" />
+    <Folder Include="Featues\Rents\Commands\DeleteRent\" />
+    <Folder Include="Featues\Rents\Commands\UpdateRent\" />
+    <Folder Include="Featues\Rents\Contands\" />
+    <Folder Include="Featues\Rents\Dtos\" />
+    <Folder Include="Featues\Rents\Models\" />
+    <Folder Include="Featues\Rents\Rules\" />
+    <Folder Include="Featues\Rents\Profile\" />
+    <Folder Include="Featues\Rents\Queries\" />
     <Folder Include="Services\AuthService\" />
   </ItemGroup>
   <ItemGroup>
