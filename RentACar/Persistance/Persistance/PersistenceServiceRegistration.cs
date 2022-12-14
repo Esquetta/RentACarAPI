@@ -23,6 +23,7 @@ namespace Persistence
             services.AddScoped<IGearBoxRepository, GearBoxRepository>();
             services.AddScoped<ICarModelRepository, CarModelRepository>();
             services.AddScoped<IRentRepository, RentRepository>();
+            services.AddScoped<IPhotoRepository, PhotoRepository>();
             services.AddDbContext<BaseDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("RentACar")));
 
             return services;
