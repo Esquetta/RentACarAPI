@@ -13,6 +13,13 @@
     <Folder Include="Featues\Cars\Constants\" />
     <Folder Include="Featues\Fuels\Constants\" />
     <Folder Include="Featues\GearBoxses\Constants\" />
+    <Folder Include="Featues\Photos\Commands\" />
+    <Folder Include="Featues\Photos\Constants\" />
+    <Folder Include="Featues\Photos\Dtos\" />
+    <Folder Include="Featues\Photos\Models\" />
+    <Folder Include="Featues\Photos\Rules\" />
+    <Folder Include="Featues\Photos\Queries\" />
+    <Folder Include="Featues\Photos\Profiles\" />
     <Folder Include="Featues\Rents\Commands\CreateRent\" />
     <Folder Include="Featues\Rents\Commands\DeleteRent\" />
     <Folder Include="Featues\Rents\Commands\UpdateRent\" />
