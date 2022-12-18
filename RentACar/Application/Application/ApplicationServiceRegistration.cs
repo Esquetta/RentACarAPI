@@ -32,7 +32,7 @@ namespace Application
             services.AddScoped<GearBoxBusinessRules>();
             services.AddScoped<CarModelBusinessRules>();
             services.AddScoped<CarBusinessRules>();
-            services.AddScoped<PhotosBusinessRules>();
+            services.AddScoped<PhotoBusinessRules>();
 
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(AuthorizationBehavior<,>));

@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace Application.Featues.Photos.Rules
 {
-    public class PhotosBusinessRules
+    public class PhotoBusinessRules
     {
         private readonly IPhotoRepository photoRepository;
-        public PhotosBusinessRules(IPhotoRepository photoRepository)
+        public PhotoBusinessRules(IPhotoRepository photoRepository)
         {
             this.photoRepository = photoRepository;
         }

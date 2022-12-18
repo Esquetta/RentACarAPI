@@ -21,8 +21,8 @@ namespace Application.Featues.Photos.Commands.DeletePhoto
         {
             private readonly IPhotoRepository photoRepository;
             private readonly IMapper mapper;
-            private readonly PhotosBusinessRules photosBusinessRules;
-            public DeletePhotoCommandHandler(IPhotoRepository photoRepository, IMapper mapper, PhotosBusinessRules photosBusinessRules)
+            private readonly PhotoBusinessRules photosBusinessRules;
+            public DeletePhotoCommandHandler(IPhotoRepository photoRepository, IMapper mapper, PhotoBusinessRules photosBusinessRules)
             {
                 this.photoRepository = photoRepository;
                 this.mapper = mapper;
