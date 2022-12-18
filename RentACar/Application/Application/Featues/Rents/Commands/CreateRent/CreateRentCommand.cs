@@ -40,7 +40,6 @@ namespace Application.Featues.Rents.Commands.CreateRent
                     DateOfIssue = request.DateOfIssue,
                 };
                 
-
                 Rent createdRent = await rentRepository.AddAsync(rent);
             }
         }
