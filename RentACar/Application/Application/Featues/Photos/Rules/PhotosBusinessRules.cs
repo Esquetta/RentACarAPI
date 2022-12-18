@@ -21,7 +21,6 @@ namespace Application.Featues.Photos.Rules
         {
             Photo photo = await photoRepository.GetAsync(x => x.Id == id);
             if (photo == null) throw new BusinessException("Photo not exists.");
-
             return photo;
         }
     }
