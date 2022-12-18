@@ -16,14 +16,14 @@ namespace Application.Featues.GearBoxses.Rules
         {
             this.gearBoxRepository = gearBoxRepository;
         }
-        public async Task GearBoxCannotBeDuplicatedWhenInserted(string gearBoxType)
+        public async Task GearBoxCannotBeDuplicatedWhenInserted(string gearBoxType,int speed)
         {
-            GearBox gearBox = await gearBoxRepository.GetAsync(x => x.GearType == gearBoxType);
+            GearBox gearBox = await gearBoxRepository.GetAsync(x => x.GearType == gearBoxType && x.Speed==speed);
             if (gearBox != null) throw new BusinessException("GearType name exists.");
         }
-        public async Task GearBoxCannotBeDuplicatedWhenUpdated(string gearBoxType)
+        public async Task GearBoxCannotBeDuplicatedWhenUpdated(string gearBoxType, int speed)
         {
-            GearBox gearBox = await gearBoxRepository.GetAsync(x => x.GearType == gearBoxType);
+            GearBox gearBox = await gearBoxRepository.GetAsync(x => x.GearType == gearBoxType && x.Speed==speed);
             if (gearBox != null) throw new BusinessException("GearType name exists.");
         }
         public async Task<GearBox> GearBoxCheckById(int id)

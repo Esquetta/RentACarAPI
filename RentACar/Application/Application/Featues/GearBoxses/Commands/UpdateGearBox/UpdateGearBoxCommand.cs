@@ -34,7 +34,7 @@ namespace Application.Featues.GearBoxses.Commands.UpdateGearBox
 
             public async Task<UpdatedGearBoxDto> Handle(UpdateGearBoxCommand request, CancellationToken cancellationToken)
             {
-                await gearBoxBusinessRules.GearBoxCannotBeDuplicatedWhenUpdated(request.GearType);
+                await gearBoxBusinessRules.GearBoxCannotBeDuplicatedWhenUpdated(request.GearType,request.Speed);
                 GearBox gearBox = mapper.Map<GearBox>(request);
                 GearBox updatedGearBox = await gearBoxRepository.UpdateAsync(gearBox);
 

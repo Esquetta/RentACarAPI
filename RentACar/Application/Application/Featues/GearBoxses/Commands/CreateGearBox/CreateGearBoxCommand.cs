@@ -33,7 +33,7 @@ namespace Application.Featues.GearBoxses.Commands.CreateGearBox
                 
             public async Task<CreatedGearBoxDto> Handle(CreateGearBoxCommand request, CancellationToken cancellationToken)
             {
-                await gearBoxBusinessRules.GearBoxCannotBeDuplicatedWhenInserted(request.GearType);
+                await gearBoxBusinessRules.GearBoxCannotBeDuplicatedWhenInserted(request.GearType,request.Speed);
 
                 GearBox gearBox = mapper.Map<GearBox>(request);
 
