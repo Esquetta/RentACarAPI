@@ -25,7 +25,8 @@ namespace Application.Featues.Photos.Profiles
 
             CreateMap<Photo, UpdatePhotoCommand>().ReverseMap();
             CreateMap<Photo,UpdatedPhotoDto>().ReverseMap();
-            
+
+            CreateMap<Photo, PhotoListViewDto>().ReverseMap();
         }
     }
 }
