@@ -31,7 +31,7 @@ namespace Application.Featues.Photos.Commands.DeletePhoto
 
             public async  Task<DeletedPhotoDto> Handle(DeletePhotoCommand request, CancellationToken cancellationToken)
             {
-                Photo photo  = await photosBusinessRules.PhotoCheckById(request.Id);
+                await photosBusinessRules.PhotoCheckById(request.Id);
 
                 Photo deletedPhoto = await photoRepository.DeleteAsync(photo);
 

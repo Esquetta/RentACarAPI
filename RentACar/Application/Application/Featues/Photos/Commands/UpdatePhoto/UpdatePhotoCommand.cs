@@ -25,10 +25,11 @@ namespace Application.Featues.Photos.Commands.UpdatePhoto
             private readonly IPhotoRepository photoRepository;
             private readonly IMapper mapper;
             private readonly PhotosBusinessRules photosBusinessRules;
-            public UpdatePhotoCommandHandler(IPhotoRepository photoRepository, IMapper mapper)
+            public UpdatePhotoCommandHandler(IPhotoRepository photoRepository, IMapper mapper,PhotosBusinessRules photosBusinessRules)
             {
                 this.photoRepository = photoRepository;
                 this.mapper = mapper;
+                this.photosBusinessRules= photosBusinessRules;
             }
 
             public async Task<UpdatedPhotoDto> Handle(UpdatePhotoCommand request, CancellationToken cancellationToken)

@@ -17,12 +17,12 @@ namespace Application.Featues.Photos.Rules
             this.photoRepository = photoRepository;
         }
 
-        public async Task PhotoCheckById(int id)
+        public async Task<Photo> PhotoCheckById(int id)
         {
             Photo photo = await photoRepository.GetAsync(x => x.Id == id);
             if (photo == null) throw new BusinessException("Photo not exists.");
 
-            
+            return photo;
         }
     }
 }

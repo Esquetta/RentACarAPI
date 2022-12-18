@@ -23,11 +23,13 @@ namespace Application.Featues.Rents.Commands.CreateRent
         public class CreateRentCommandHandler : IRequestHandler<CreateRentCommand, CreatedRentDto>
         {
             private readonly IRentRepository rentRepository;
+            private readonly IRentDetailRepository rentDetailRepository;
             private readonly IMapper mapper;
-            public CreateRentCommandHandler(IRentRepository rentRepository, IMapper mapper)
+            public CreateRentCommandHandler(IRentRepository rentRepository, IMapper mapper, IRentDetailRepository rentDetailRepository)
             {
                 this.rentRepository = rentRepository;
                 this.mapper = mapper;
+                this.rentDetailRepository = rentDetailRepository;
             }
 
             public async Task<CreatedRentDto> Handle(CreateRentCommand request, CancellationToken cancellationToken)
@@ -39,8 +41,31 @@ namespace Application.Featues.Rents.Commands.CreateRent
                     userId = request.userId,
                     DateOfIssue = request.DateOfIssue,
                 };
-                
+
                 Rent createdRent = await rentRepository.AddAsync(rent);
+
+                RentDetail rentDetail = new()
+                {
+                    CarId = request.CarId,
+                    Price = request.Price,
+                    RentId = createdRent.Id
+                };
+
+                RentDetail createdRentDetail = await rentDetailRepository.AddAsync(rentDetail);
+
+                CreatedRentDto createdRentDto = new() {
+                CarId=createdRentDetail.CarId,
+                Price=createdRentDetail.Price,
+                DateOfIssue=createdRent.DateOfIssue,
+                ReturnDate=createdRent.ReturnDate,
+                IsFinished=true,
+                UserId=createdRent.userId
+                };
+
+
+                return createdRentDto;
+                
+
             }
         }
     }
