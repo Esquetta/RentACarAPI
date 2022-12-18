@@ -1,4 +1,5 @@
-﻿using Domain.Entities;
+﻿using Application.Featues.Photos.Dtos;
+using Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,6 @@ namespace Application.Featues.Cars.Dtos
         public int Miles { get; set; }
         public string Description { get; set; }
         public bool For_Rent { get; set; }
-        public List<Photo> Photos { get; set; }
+        public List<PhotoListViewDto> Photos { get; set; }
     }
 }
