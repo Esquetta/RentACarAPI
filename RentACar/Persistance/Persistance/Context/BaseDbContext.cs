@@ -1,4 +1,5 @@
-﻿using Domain.Entities;
+﻿using Core.Security.Entities;
+using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -22,6 +23,9 @@ namespace Persistence.Context
         public DbSet<Photo> Photos { get; set; }
         public DbSet<RentDetail> RentDetails { get; set; }
         public DbSet<Rent> Rents { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
+        public DbSet<RefreshToken> RefreshTokens { get; set; }
 
         protected IConfiguration Configuration { get; set; }
 
