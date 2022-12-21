@@ -36,7 +36,7 @@ namespace Application.Featues.Cars.Queries.GetListCar
                     size:request.PageRequest.PageSize);
 
                 CarListViewModel carListViewModel = mapper.Map<CarListViewModel>(paginate);
-
+                
 
                 return carListViewModel;
             }

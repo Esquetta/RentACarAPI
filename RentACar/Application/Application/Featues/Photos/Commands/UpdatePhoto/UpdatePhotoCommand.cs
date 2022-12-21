@@ -34,7 +34,7 @@ namespace Application.Featues.Photos.Commands.UpdatePhoto
 
             public async Task<UpdatedPhotoDto> Handle(UpdatePhotoCommand request, CancellationToken cancellationToken)
             {
-                await photosBusinessRules.PhotoCheckById(request.Id);
+               // await photosBusinessRules.PhotoCheckById(request.Id);
                 Photo photo = mapper.Map<Photo>(request);
 
                 Photo updatedPhoto = await photoRepository.UpdateAsync(photo);
