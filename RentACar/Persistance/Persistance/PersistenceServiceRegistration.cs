@@ -25,6 +25,10 @@ namespace Persistence
             services.AddScoped<IRentRepository, RentRepository>();
             services.AddScoped<IPhotoRepository, PhotoRepository>();
             services.AddScoped<IRentDetailRepository, RentDetailRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUserOperationClaimRepository, UserOperationClaimRepository>();
+            services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
+            services.AddScoped<IOperationClaimRepository, OperationClaimRepostiory>();
             services.AddDbContext<BaseDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("RentACar")));
 
             return services;

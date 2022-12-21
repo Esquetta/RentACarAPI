@@ -10,6 +10,7 @@ namespace Application.Services.AuthService
 {
     public class AuthManager : IAuthService
     {
+        
         public Task<RefreshToken> AddRefreshToken(RefreshToken refreshToken)
         {
             throw new NotImplementedException();
