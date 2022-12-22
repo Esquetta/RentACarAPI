@@ -33,7 +33,7 @@ namespace Application.Featues.OperationClaims.Commands.UpdateOperationClaim
             {
                 await operationClaimBusinessRules.OperationClaimCannotBeDuplicatedWhenUpdated(request.Name);
 
-                OperationClaim operationClaim = mapper.Map<OperationClaim>(request.Name);
+                OperationClaim operationClaim = mapper.Map<OperationClaim>(request);
 
                 OperationClaim updatedOperationClaim = await operationClaimRepository.UpdateAsync(operationClaim);
 

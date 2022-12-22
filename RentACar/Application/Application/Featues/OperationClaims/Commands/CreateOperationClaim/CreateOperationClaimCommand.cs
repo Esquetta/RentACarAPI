@@ -20,7 +20,7 @@ namespace Application.Featues.OperationClaims.Commands.CreateOperationClaim
             private readonly IOperationClaimRepository operationClaimRepository;
             private readonly OperationClaimBusinessRules operationClaimBusinessRules;
             private readonly IMapper mapper;
-            public CreateOperationClaimCommandHandler(IOperationClaimRepository operationClaim,OperationClaimBusinessRules operationClaimBusinessRules,IMapper mapper)
+            public CreateOperationClaimCommandHandler(IOperationClaimRepository operationClaimRepository, OperationClaimBusinessRules operationClaimBusinessRules,IMapper mapper)
             {
                 this.mapper = mapper;
                 this.operationClaimBusinessRules = operationClaimBusinessRules;
