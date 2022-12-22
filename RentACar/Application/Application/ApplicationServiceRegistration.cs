@@ -4,6 +4,7 @@ using Application.Featues.CarModels.Rules;
 using Application.Featues.Cars.Rules;
 using Application.Featues.Fuels.Rules;
 using Application.Featues.GearBoxses.Rules;
+using Application.Featues.OperationClaims.Rules;
 using Application.Featues.Photos.Rules;
 using Core.Application.Pipelines.Validation;
 using FluentValidation;
@@ -33,6 +34,7 @@ namespace Application
             services.AddScoped<CarModelBusinessRules>();
             services.AddScoped<CarBusinessRules>();
             services.AddScoped<PhotoBusinessRules>();
+            services.AddScoped<OperationClaimBusinessRules>();
 
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(AuthorizationBehavior<,>));

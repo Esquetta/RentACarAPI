@@ -13,6 +13,7 @@
     <Folder Include="Featues\Cars\Constants\" />
     <Folder Include="Featues\Fuels\Constants\" />
     <Folder Include="Featues\GearBoxses\Constants\" />
+    <Folder Include="Featues\OperationClaims\Constants\" />
     <Folder Include="Featues\Photos\Constants\" />
     <Folder Include="Featues\Photos\Models\" />
     <Folder Include="Featues\Photos\Queries\" />
