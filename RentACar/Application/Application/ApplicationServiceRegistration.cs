@@ -1,4 +1,5 @@
-﻿using Application.Featues.Brands.Rules;
+﻿using Application.Featues.Auths.Rules;
+using Application.Featues.Brands.Rules;
 using Application.Featues.CarColors.Rules;
 using Application.Featues.CarModels.Rules;
 using Application.Featues.Cars.Rules;
@@ -7,6 +8,7 @@ using Application.Featues.GearBoxses.Rules;
 using Application.Featues.OperationClaims.Rules;
 using Application.Featues.Photos.Rules;
 using Application.Featues.UserOperationClaims.Rules;
+using Application.Services.AuthService;
 using Core.Application.Pipelines.Validation;
 using FluentValidation;
 using MediatR;
@@ -37,6 +39,8 @@ namespace Application
             services.AddScoped<PhotoBusinessRules>();
             services.AddScoped<OperationClaimBusinessRules>();
             services.AddScoped<UserOperationClaimBusinessRules>();
+            services.AddScoped<AuthBusinessRules>();
+            services.AddScoped<IAuthService, AuthManager>();
 
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(AuthorizationBehavior<,>));

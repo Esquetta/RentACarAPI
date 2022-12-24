@@ -7,6 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Featues\Auths\Queries\" />
+    <Folder Include="Featues\Auths\Constants\" />
+    <Folder Include="Featues\Auths\Models\" />
     <Folder Include="Featues\Brands\Constants\" />
     <Folder Include="Featues\CarColors\Constants\" />
     <Folder Include="Featues\CarModels\Constants\" />

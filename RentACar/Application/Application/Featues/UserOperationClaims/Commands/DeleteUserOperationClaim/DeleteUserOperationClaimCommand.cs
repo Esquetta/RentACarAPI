@@ -12,17 +12,18 @@ using System.Threading.Tasks;
 
 namespace Application.Featues.UserOperationClaims.Commands.UpdateUserOperationClaim
 {
-    public class DeleteUserOperationClaimCommand: IRequest<DeletedUserOperationClaimDto>
+    public class DeleteUserOperationClaimCommand : IRequest<DeletedUserOperationClaimDto>
     {
-        public int UserId { get; set; }
-        public int OperationClaimId { get; set; }
 
-        public class DeleteUserOperationClaimCommandHandler:IRequestHandler<DeleteUserOperationClaimCommand, DeletedUserOperationClaimDto>
+        public int OperationClaimId { get; set; }
+        public int UserId { get; set; }
+
+        public class DeleteUserOperationClaimCommandHandler : IRequestHandler<DeleteUserOperationClaimCommand, DeletedUserOperationClaimDto>
         {
             private readonly IMapper mapper;
             private readonly IUserOperationClaimRepository userOperationClaimRepository;
             private readonly UserOperationClaimBusinessRules userOperationClaimBusinessRules;
-            public DeleteUserOperationClaimCommandHandler(IUserOperationClaimRepository userOperationClaimRepository,IMapper mapper,UserOperationClaimBusinessRules userOperationClaimBusinessRules)
+            public DeleteUserOperationClaimCommandHandler(IUserOperationClaimRepository userOperationClaimRepository, IMapper mapper, UserOperationClaimBusinessRules userOperationClaimBusinessRules)
             {
                 this.mapper = mapper;
                 this.userOperationClaimBusinessRules = userOperationClaimBusinessRules;
@@ -36,7 +37,9 @@ namespace Application.Featues.UserOperationClaims.Commands.UpdateUserOperationCl
 
                 UserOperationClaim userOperationClaim = mapper.Map<UserOperationClaim>(request);
 
-                UserOperationClaim deletedUserOperationClaim = await userOperationClaimRepository.DeleteAsync(userOperationClaim);
+                UserOperationClaim mustDeleteClaim = await userOperationClaimRepository.GetAsync(x => x.UserId == request.UserId && x.OperationClaimId == request.OperationClaimId);
+
+                UserOperationClaim deletedUserOperationClaim = await userOperationClaimRepository.DeleteAsync(mustDeleteClaim);
 
                 DeletedUserOperationClaimDto deletedUserOperationClaimDto = mapper.Map<DeletedUserOperationClaimDto>(deletedUserOperationClaim);
 
