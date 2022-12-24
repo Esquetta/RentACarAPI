@@ -23,6 +23,7 @@
     <Folder Include="Featues\Rents\Models\" />
     <Folder Include="Featues\Rents\Rules\" />
     <Folder Include="Featues\Rents\Queries\" />
+    <Folder Include="Featues\UserOperationClaims\Constans\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
