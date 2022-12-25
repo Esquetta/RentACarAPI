@@ -18,7 +18,7 @@ namespace Application.Featues.UserOperationClaims.Commands.CreateUserOperatinoCl
         public int OperationClaimId { get; set; }
         public int UserId { get; set; }
 
-        public string[] Roles { get; } = { "Admin" };
+        public string[] Roles { get; } = { "Moderator" };
 
         public class CreateUserOperationClaimCommandHandler : IRequestHandler<CreateUserOperationClaimCommand, CreatedUserOperationClaimDto>
         {

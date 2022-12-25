@@ -3,6 +3,7 @@ using Application.Featues.Auths.Rules;
 using Application.Services.AuthService;
 using Application.Services.Repositories;
 using AutoMapper;
+using Core.CrossCuttingConcerns.Exceptions;
 using Core.Security.Dtos;
 using Core.Security.Hashing;
 using Core.Security.JWT;
@@ -46,7 +47,7 @@ namespace Application.Featues.Auth.Commands.Login
                 var result = HashingHelper.VerifyPasswordHash(request.UserForLoginDto.Password, user.PasswordHash, user.PasswordSalt);
 
                 if (!result)
-                    return null;
+                    throw new BusinessException("Invlaid email or password.");
 
                 AccessToken accessToken = await authService.CreateAccessToken(user);
 
