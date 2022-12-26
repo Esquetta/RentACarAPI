@@ -24,7 +24,7 @@ namespace RentACarAPI.Controllers
         public async Task<IActionResult> Create([FromBody] CreateFuelCommand createFuelCommand)
         {
             CreatedFuelDto result = await Mediator.Send(createFuelCommand);
-            return Ok(result);
+            return Created("", result);
         }
         [HttpPut]
         public async Task<IActionResult> Update([FromBody] UpdateFuelCommand updateFuelCommand)

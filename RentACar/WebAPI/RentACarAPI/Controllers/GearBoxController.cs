@@ -25,7 +25,7 @@ namespace RentACarAPI.Controllers
         public async Task<IActionResult> Create([FromBody] CreateGearBoxCommand createGearBoxCommand)
         {
             CreatedGearBoxDto result = await Mediator.Send(createGearBoxCommand);
-            return Ok(result);
+            return Created("", result);
         }
         [HttpPut]
         public async Task<IActionResult> Update([FromBody] UpdateGearBoxCommand updateGearBoxCommand)

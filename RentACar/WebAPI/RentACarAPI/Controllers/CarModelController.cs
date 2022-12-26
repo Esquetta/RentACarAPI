@@ -24,10 +24,10 @@ namespace RentACarAPI.Controllers
             return Ok(result);
         }
         [HttpPost]
-        public async Task<IActionResult> Add([FromBody] CreateCarModelCommand createCarModelCommand)
+        public async Task<IActionResult> Create([FromBody] CreateCarModelCommand createCarModelCommand)
         {
             CreatedCarModelDto createdCarModelDto = await Mediator.Send(createCarModelCommand);
-            return Ok(createdCarModelDto);
+            return Created("",createdCarModelDto);
         }
         [HttpPut]
         public async Task<IActionResult> Update([FromBody] UpdateCarModelCommand updateCarModelCommand)

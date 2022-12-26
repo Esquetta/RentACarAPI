@@ -16,7 +16,7 @@ namespace RentACarAPI.Controllers
         public async Task<IActionResult> Create([FromBody]CreatePhotoCommand createPhotoCommand)
         {
             CreatedPhotoDto createdPhotoDto = await Mediator.Send(createPhotoCommand);
-            return Ok(createdPhotoDto);
+            return Created("", createdPhotoDto);
         }
         [HttpPut]
         public async Task<IActionResult> Update([FromBody] UpdatePhotoCommand updatePhotoCommand)

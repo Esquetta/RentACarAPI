@@ -34,7 +34,7 @@ namespace RentACarAPI.Controllers
         public async Task<IActionResult> Create([FromBody] CreateBrandCommand createBrandCommand)
         {
             CreatedBrandDto result = await Mediator.Send(createBrandCommand);
-            return Ok(result);
+            return Created("",result);
         }
         [HttpPut]
         public async Task<IActionResult> Update([FromBody] UpdateBrandCommand updateBrandCommand)
