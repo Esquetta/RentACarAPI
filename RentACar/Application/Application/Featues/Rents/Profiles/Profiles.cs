@@ -20,6 +20,8 @@ namespace Application.Featues.Rents.Profiles
 
             CreateMap<UpdatedRentDto, Rent>().ReverseMap();
             CreateMap<UpdateRentCommand, Rent>().ReverseMap();
+
+            CreateMap<DeletedRentDto, Rent>().ReverseMap();
         }
     }
 }

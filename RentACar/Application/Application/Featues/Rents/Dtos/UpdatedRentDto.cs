@@ -8,6 +8,7 @@ namespace Application.Featues.Rents.Dtos
 {
     public class UpdatedRentDto
     {
+        public int Id { get; set; }
         public DateTime DateOfIssue { get; set; }
         public DateTime ReturnDate { get; set; }
         public int userId { get; set; }

@@ -11,8 +11,6 @@ namespace Application.Featues.Rents.Dtos
         public DateTime DateOfIssue { get; set; }
         public DateTime ReturnDate { get; set; }
         public int UserId { get; set; }
-        public int CarId { get; set; }
-        public decimal Price { get; set; }
         public bool IsFinished { get; set; }
     }
 }

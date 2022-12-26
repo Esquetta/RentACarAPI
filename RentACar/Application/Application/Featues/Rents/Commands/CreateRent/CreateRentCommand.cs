@@ -1,14 +1,8 @@
 ﻿using Application.Featues.Rents.Dtos;
 using Application.Services.Repositories;
 using AutoMapper;
-using Core.Security.Entities;
 using Domain.Entities;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Featues.Rents.Commands.CreateRent
 {
@@ -17,7 +11,7 @@ namespace Application.Featues.Rents.Commands.CreateRent
         public DateTime DateOfIssue { get; set; }
         public DateTime ReturnDate { get; set; }
         public int userId { get; set; }
-        public bool IsFinished { get; set; }
+        public bool IsFinished { get; set; } = false;
 
         public class CreateRentCommandHandler : IRequestHandler<CreateRentCommand, CreatedRentDto>
         {

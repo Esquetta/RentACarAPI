@@ -13,6 +13,7 @@ namespace Application.Featues.Rents.Commands.UpdateRent
 {
     public class UpdateRentCommand : IRequest<UpdatedRentDto>
     {
+        public int Id { get; set; }
         public DateTime DateOfIssue { get; set; }
         public DateTime ReturnDate { get; set; }
         public int userId { get; set; }
