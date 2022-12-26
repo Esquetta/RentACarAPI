@@ -1,7 +1,6 @@
 ﻿using Application.Featues.Rents.Dtos;
 using Application.Services.Repositories;
 using AutoMapper;
-using Core.Security.Entities;
 using Domain.Entities;
 using MediatR;
 using System;
@@ -10,37 +9,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Featues.Rents.Commands.CreateRent
+namespace Application.Featues.Rents.Commands.UpdateRent
 {
-    public class CreateRentCommand : IRequest<CreatedRentDto>
+    public class UpdateRentCommand : IRequest<UpdatedRentDto>
     {
         public DateTime DateOfIssue { get; set; }
         public DateTime ReturnDate { get; set; }
         public int userId { get; set; }
         public bool IsFinished { get; set; }
 
-        public class CreateRentCommandHandler : IRequestHandler<CreateRentCommand, CreatedRentDto>
+        public class UpdateRentCommandHandler : IRequestHandler<UpdateRentCommand, UpdatedRentDto>
         {
             private readonly IRentRepository rentRepository;
             private readonly IMapper mapper;
-            public CreateRentCommandHandler(IRentRepository rentRepository, IMapper mapper)
+            public UpdateRentCommandHandler(IRentRepository rentRepository, IMapper mapper)
             {
-                this.rentRepository = rentRepository;
                 this.mapper = mapper;
-
+                this.rentRepository = rentRepository;
             }
 
-            public async Task<CreatedRentDto> Handle(CreateRentCommand request, CancellationToken cancellationToken)
+            public async Task<UpdatedRentDto> Handle(UpdateRentCommand request, CancellationToken cancellationToken)
             {
                 Rent rent = mapper.Map<Rent>(request);
 
-                Rent createdRent = await rentRepository.AddAsync(rent);
+                Rent updatedRent = await rentRepository.UpdateAsync(rent);
 
-                CreatedRentDto createdRentDto = mapper.Map<CreatedRentDto>(createdRent);
+                UpdatedRentDto updatedRentDto = mapper.Map<UpdatedRentDto>(updatedRent);
 
-
-                return createdRentDto;
-
+                return updatedRentDto;
 
             }
         }

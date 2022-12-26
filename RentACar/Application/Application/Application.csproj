@@ -20,12 +20,10 @@
     <Folder Include="Featues\Photos\Constants\" />
     <Folder Include="Featues\Photos\Models\" />
     <Folder Include="Featues\Photos\Queries\" />
-    <Folder Include="Featues\Rents\Commands\DeleteRent\" />
-    <Folder Include="Featues\Rents\Commands\UpdateRent\" />
     <Folder Include="Featues\Rents\Contands\" />
     <Folder Include="Featues\Rents\Models\" />
-    <Folder Include="Featues\Rents\Rules\" />
     <Folder Include="Featues\Rents\Queries\" />
+    <Folder Include="Featues\Rents\Rules\" />
     <Folder Include="Featues\UserOperationClaims\Constans\" />
   </ItemGroup>
   <ItemGroup>
