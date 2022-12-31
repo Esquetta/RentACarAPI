@@ -3,6 +3,7 @@ using Application.Featues.Cars.Commands.DeleteCar;
 using Application.Featues.Cars.Commands.UpdateCar;
 using Application.Featues.Cars.Dtos;
 using Application.Featues.Cars.Models;
+using Application.Featues.Cars.Queries.GetCarById;
 using Application.Featues.Cars.Queries.GetListCar;
 using Application.Featues.Cars.Queries.GetListCarByDynamic;
 using Core.Application.Requests;
@@ -17,6 +18,13 @@ namespace RentACarAPI.Controllers
     public class CarController : BaseController
     {
 
+
+        [HttpGet]
+        public async Task<IActionResult> GetById([FromQuery] GetCarByIdQuery getCarByIdQuery)
+        {
+            CarListViewModel result = await Mediator.Send(getCarByIdQuery);
+            return Ok(result);
+        }
         [HttpPost]
         public async Task<IActionResult> Create([FromBody]CreateCarCommand createCarCommand)
         {
