@@ -21,13 +21,9 @@
     <Folder Include="Featues\Photos\Models\" />
     <Folder Include="Featues\Photos\Queries\" />
     <Folder Include="Featues\RentDetails\Commands\CreateRentDetail\" />
-    <Folder Include="Featues\RentDetails\Commands\DeleteRentDetail\" />
-    <Folder Include="Featues\RentDetails\Commands\UpdateRentDetail\" />
     <Folder Include="Featues\RentDetails\Constants\" />
-    <Folder Include="Featues\RentDetails\Dtos\" />
     <Folder Include="Featues\RentDetails\Models\" />
     <Folder Include="Featues\RentDetails\Profiles\" />
-    <Folder Include="Featues\RentDetails\Rules\" />
     <Folder Include="Featues\RentDetails\Queries\" />
     <Folder Include="Featues\Rents\Contands\" />
     <Folder Include="Featues\Rents\Models\" />

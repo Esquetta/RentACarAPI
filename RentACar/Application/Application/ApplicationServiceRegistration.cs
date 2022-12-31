@@ -7,6 +7,7 @@ using Application.Featues.Fuels.Rules;
 using Application.Featues.GearBoxses.Rules;
 using Application.Featues.OperationClaims.Rules;
 using Application.Featues.Photos.Rules;
+using Application.Featues.RentDetails.Rules;
 using Application.Featues.Rents.Rules;
 using Application.Featues.UserOperationClaims.Rules;
 using Application.Services.AuthService;
@@ -43,6 +44,7 @@ namespace Application
             services.AddScoped<UserOperationClaimBusinessRules>();
             services.AddScoped<AuthBusinessRules>();
             services.AddScoped<RentBusinessRules>();
+            services.AddScoped<RentDetailBusinessRules>();
             services.AddScoped<IAuthService, AuthManager>();
 
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
