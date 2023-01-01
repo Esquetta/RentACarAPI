@@ -24,7 +24,6 @@
     <Folder Include="Featues\RentDetails\Constants\" />
     <Folder Include="Featues\RentDetails\Models\" />
     <Folder Include="Featues\RentDetails\Profiles\" />
-    <Folder Include="Featues\RentDetails\Queries\" />
     <Folder Include="Featues\Rents\Contands\" />
     <Folder Include="Featues\Rents\Models\" />
     <Folder Include="Featues\Rents\Queries\" />
