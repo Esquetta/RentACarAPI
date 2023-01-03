@@ -2,6 +2,7 @@
 using Application.Featues.RentDetails.Commands.DeleteRentDetail;
 using Application.Featues.RentDetails.Commands.UpdateRentDetail;
 using Application.Featues.RentDetails.Dtos;
+using Application.Featues.RentDetails.Queries.GetRentById;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -28,6 +29,13 @@ namespace RentACarAPI.Controllers
         {
             DeletedRentDetailDto result = await Mediator.Send(deleteRentDetailCommand);
             return Ok(result);
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetById([FromQuery] GetRentByIdQuery getRentByIdQuery)
+        {
+            RentDetailListViewDto result = await Mediator.Send(getRentByIdQuery);
+            return Ok(result);
+
         }
     }
 }

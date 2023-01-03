@@ -22,9 +22,17 @@ namespace Application.Featues.RentDetails.Profiles
             CreateMap<RentDetail, UpdateRentDetailCommand>().ReverseMap();
             CreateMap<RentDetail, UpdatedRentDetailDto>().ReverseMap();
             
-
-
             CreateMap<RentDetail, DeletedRentDetailDto>().ReverseMap();
+
+
+            CreateMap<RentDetail, RentDetailListViewDto>().ForMember(x => x.FirstName, src => src.MapFrom(opt => opt.Rent.Customer.FirstName))
+                .ForMember(x => x.LastName, src => src.MapFrom(opt => opt.Rent.Customer.LastName))
+                .ForMember(x=>x.DateOfIssue,src=>src.MapFrom(opt=>opt.Rent.DateOfIssue))
+                .ForMember(x=>x.ReturnDate,src=>src.MapFrom(opt=>opt.Rent.ReturnDate));
+                
+
+            
+                
         }
     }
 }
