@@ -6,13 +6,16 @@ using Application.Featues.Brands.Models;
 using Application.Featues.Brands.Queries.GetListBrandsWithModels;
 using Application.Featues.Brands.Queries.GetListLBrand;
 using Core.Application.Requests;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 
 namespace RentACarAPI.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
+    [Authorize(Roles = "Manager")]
     public class BrandController : BaseController
     {
 

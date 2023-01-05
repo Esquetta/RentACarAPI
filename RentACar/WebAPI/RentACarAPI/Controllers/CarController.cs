@@ -8,13 +8,16 @@ using Application.Featues.Cars.Queries.GetListCar;
 using Application.Featues.Cars.Queries.GetListCarByDynamic;
 using Core.Application.Requests;
 using Core.Persistence.Dynamic;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 
 namespace RentACarAPI.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
+    [Authorize(Roles = "Manager")]
     public class CarController : BaseController
     {
 
