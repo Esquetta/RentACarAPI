@@ -62,6 +62,10 @@ namespace Persistence.Context
 
             CarModel[] carModels = { new(1, "A4", 1), new(2, "Focus RS", 2), new(3, "GTR", 3), new(4, "Supra", 4), new(5, "M5", 5), new(6, "AMG GTR", 6), new(7, "GT3", 7), new(8, "Charger", 8) };
             modelBuilder.Entity<CarModel>().HasData(carModels);
+
+            OperationClaim[] operationClaims = { new() {Name="Admin"},new() {Name="Moderator" },new() {Name="Customer" }, new() { Name = "Manager" }, new() { Name = "Employee" } };
+            modelBuilder.Entity<OperationClaim>().HasData(operationClaims);
+
             modelBuilder.Entity<Car>(x => {
                 x.Property("Price").HasColumnType("money");
             });
