@@ -2,6 +2,7 @@
 using Application.Featues.Brands.Rules;
 using Application.Services.Repositories;
 using AutoMapper;
+using Core.Application.Pipelines.Logging;
 using Domain.Entities;
 using MediatR;
 using System;
@@ -12,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace Application.Featues.Brands.Commands.CreateBrand
 {
-    public class CreateBrandCommand:IRequest<CreatedBrandDto>
+    public class CreateBrandCommand:IRequest<CreatedBrandDto>,ILoggableRequest
     {
 
         public string BrandName { get; set; }
