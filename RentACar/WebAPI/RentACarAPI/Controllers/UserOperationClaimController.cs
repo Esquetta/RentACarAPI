@@ -14,7 +14,6 @@ namespace RentACarAPI.Controllers
    
     [Route("api/[controller]/[action]")]
     [ApiController]
-    [Authorize(Roles = "Moderator")]
     public class UserOperationClaimController : BaseController
     {
         [HttpGet]

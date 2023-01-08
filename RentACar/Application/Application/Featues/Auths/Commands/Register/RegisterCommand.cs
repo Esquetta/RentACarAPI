@@ -48,6 +48,7 @@ namespace Application.Featues.Auth.Commands.Register
 
                 mappedUser.PasswordHash = hash;
                 mappedUser.PasswordSalt= salt;
+                mappedUser.Status = true;
                 
                 User createdUser = await userRepository.AddAsync(mappedUser);
 

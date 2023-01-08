@@ -12,8 +12,10 @@ using Application.Featues.Rents.Rules;
 using Application.Featues.UserOperationClaims.Rules;
 using Application.Services.AuthService;
 using Core.Application.Pipelines.Authorization;
+using Core.Application.Pipelines.Caching;
 using Core.Application.Pipelines.Logging;
 using Core.Application.Pipelines.Validation;
+using Core.CrossCuttingConcerns.Logging.Serilog;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
@@ -47,11 +49,13 @@ namespace Application
             services.AddScoped<RentBusinessRules>();
             services.AddScoped<RentDetailBusinessRules>();
             services.AddScoped<IAuthService, AuthManager>();
+            
+            
 
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(AuthorizationBehavior<,>));
-            //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(CachingBehavior<,>));
-            //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(CacheRemovingBehavior<,>));
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(CachingBehavior<,>));
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(CacheRemovingBehavior<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
             return services;
