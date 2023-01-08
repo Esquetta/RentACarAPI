@@ -1,6 +1,7 @@
 ﻿using Application.Featues.Brands.Models;
 using Application.Services.Repositories;
 using AutoMapper;
+using Core.Application.Pipelines.Logging;
 using Core.Application.Requests;
 using Core.Persistence.Paging;
 using Domain.Entities;
@@ -13,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace Application.Featues.Brands.Queries.GetListLBrand
 {
-    public class GetListBrandQuery:IRequest<BrandListViewModel>
+    public class GetListBrandQuery:IRequest<BrandListViewModel>,ILoggableRequest
     {
         public PageRequest  PageRequest { get; set; }
 

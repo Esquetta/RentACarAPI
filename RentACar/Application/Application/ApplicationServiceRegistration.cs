@@ -16,6 +16,7 @@ using Core.Application.Pipelines.Caching;
 using Core.Application.Pipelines.Logging;
 using Core.Application.Pipelines.Validation;
 using Core.CrossCuttingConcerns.Logging.Serilog;
+using Core.CrossCuttingConcerns.Logging.Serilog.Logger;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
@@ -49,6 +50,7 @@ namespace Application
             services.AddScoped<RentBusinessRules>();
             services.AddScoped<RentDetailBusinessRules>();
             services.AddScoped<IAuthService, AuthManager>();
+            services.AddScoped<LoggerServiceBase, FileLogger>();
             
             
 

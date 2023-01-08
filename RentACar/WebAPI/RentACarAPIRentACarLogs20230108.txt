@@ -1,0 +1,1 @@
+2023-01-08 15:56:43.593 +03:00 [Information] {"FullName":null,"MethodName":"<Handle>b__2","User":"string string","Parameters":[{"Name":null,"Value":{"PageRequest":{"Page":0,"PageSize":10}},"Type":"GetListBrandQuery"}]}
