@@ -35,7 +35,7 @@ namespace Domain.Entities
         {
             
         }
-        public Car(int Id, int brandId,int carModelId,DateTime productionDate, decimal price, int horsePower, int carColorId, int gearBoxId, int fuelId, int miles, string Description, bool for_rent) : this()
+        public Car(int Id, int brandId,int carModelId,DateTime productionDate, decimal price, int horsePower, int carColorId, int gearBoxId, int fuelId, int miles, string Description,CarState carState) : this()
         {
             this.Id = Id;
             this.BrandId = brandId;
@@ -47,7 +47,7 @@ namespace Domain.Entities
             this.FuelId = fuelId;
             this.Miles = miles;
             this.Description = Description;
-            this.For_Rent = for_rent;
+            this.CarState= carState;
             this.CarModelId = carModelId;
 
         }
