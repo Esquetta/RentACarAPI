@@ -47,7 +47,7 @@ namespace Persistence.Context
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
+            //Refactor
             modelBuilder.Entity<Car>().HasOne(x=>x.CarModel).WithMany(x=>x.Cars).OnDelete(DeleteBehavior.Restrict);    
             Fuel[] fuels ={new(1,"Gasoline"),new(2,"Motorine"),new(3,"Electrical")};
             modelBuilder.Entity<Fuel>().HasData(fuels);

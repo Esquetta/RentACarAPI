@@ -1,4 +1,5 @@
 ﻿using Core.Persistence.Repositories;
+using Domain.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -20,7 +21,7 @@ namespace Domain.Entities
         public int FuelId { get; set; }
         public int Miles { get; set; }
         public string Description { get; set; }
-        public bool For_Rent { get; set; }
+        public CarState CarState { get; set; }
         public virtual List<Photo> Photos { get; set; }
         public virtual List<RentDetail> RendDetails { get; set; }
         public virtual Brand Brand { get; set; }
