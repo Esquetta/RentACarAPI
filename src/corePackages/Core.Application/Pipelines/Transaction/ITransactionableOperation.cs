@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Core.Application.Pipelines.Transaction
 {
-    internal interface ITransactionableOperation
+    public interface ITransactionableOperation
     {
     }
 }
