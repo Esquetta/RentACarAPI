@@ -13,7 +13,7 @@ namespace Domain.Entities
     {
         public int BrandId { get; set; }
         public int? CarModelId { get; set; }
-        public DateTime ProductionDate { get; set; }
+        public short ProductionDate { get; set; }
         public decimal Price { get; set; }
         public int HorsePower { get; set; }
         public int CarColorId { get; set; }
@@ -21,6 +21,7 @@ namespace Domain.Entities
         public int FuelId { get; set; }
         public int Miles { get; set; }
         public string Description { get; set; }
+        public string? Plate { get; set; }
         public CarState CarState { get; set; }
         public virtual List<Photo> Photos { get; set; }
         public virtual List<RentDetail> RendDetails { get; set; }
