@@ -36,7 +36,7 @@ namespace Domain.Entities
         {
             
         }
-        public Car(int Id, int brandId,int carModelId,DateTime productionDate, decimal price, int horsePower, int carColorId, int gearBoxId, int fuelId, int miles, string Description,CarState carState) : this()
+        public Car(int Id, int brandId,int carModelId,short productionDate, decimal price, int horsePower, int carColorId, int gearBoxId, int fuelId, int miles, string Description,CarState carState) : this()
         {
             this.Id = Id;
             this.BrandId = brandId;
