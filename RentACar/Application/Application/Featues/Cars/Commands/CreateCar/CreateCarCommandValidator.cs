@@ -19,7 +19,7 @@ namespace Application.Featues.Cars.Commands.CreateCar
             RuleFor(x => x.Miles).GreaterThanOrEqualTo(0);
             RuleFor(x => x.Description).NotEmpty();
             RuleFor(x => x.FuelId).NotEmpty();
-            RuleFor(x => x.For_Rent).NotEmpty();
+            RuleFor(x => x.CarState).NotEmpty();
             RuleFor(x => x.GearBoxId).NotEmpty();
             RuleFor(x => x.ProductionDate).NotEmpty();
             

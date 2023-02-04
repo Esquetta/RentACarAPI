@@ -17,8 +17,9 @@ namespace Application.Featues.Cars.Commands.UpdateCar
         public int Id { get; set; }
         public int BrandId { get; set; }
         public int? CarModelId { get; set; }
-        public DateTime ProductionDate { get; set; }
-        public decimal Price { get; set; }
+        public short ProductionDate { get; set; }
+        public double Price { get; set; }
+        public string? Plate { get; set; }
         public int HorsePower { get; set; }
         public int CarColorId { get; set; }
         public int GearBoxId { get; set; }

@@ -31,6 +31,7 @@ namespace Application.Featues.Cars.Profiles
                 .ForMember(x => x.Fuel, src => src.MapFrom(opt => opt.Fuel.FuelType))
                 .ForMember(x => x.GearBox, src => src.MapFrom(opt => opt.GearBox.GearType))
                 .ForMember(x => x.CarModelName, src => src.MapFrom(opt => opt.CarModel.ModelName))
+                .ForMember(x=>x.ProductionYear,src=>src.MapFrom(opt=>opt.ProductionYear))
                 .ReverseMap();
             CreateMap<IPaginate<Car>,CarListViewModel>().ReverseMap();
 

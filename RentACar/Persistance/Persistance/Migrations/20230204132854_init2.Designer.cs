@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Persistence.Context;
 
@@ -11,9 +12,10 @@ using Persistence.Context;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(BaseDbContext))]
-    partial class BaseDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230204132854_init2")]
+    partial class init2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -78,37 +80,37 @@ namespace Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(1317),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Admin",
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(1317)
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(1318),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Moderator",
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(1318)
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(1319),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Customer",
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(1319)
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(1320),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Manager",
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(1320)
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 5,
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(1320),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Employee",
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(1321)
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 
@@ -294,71 +296,71 @@ namespace Persistence.Migrations
                         {
                             Id = 1,
                             BrandName = "Audi",
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8703),
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8704)
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 2,
                             BrandName = "Ford",
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8706),
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8707)
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 3,
                             BrandName = "Nissan",
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8707),
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8708)
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 4,
                             BrandName = "Toyata",
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8708),
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8708)
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 5,
                             BrandName = "BMW",
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8709),
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8709)
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 6,
                             BrandName = "Mercedes",
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8710),
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8710)
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 7,
                             BrandName = "Porche",
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8710),
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8711)
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 8,
                             BrandName = "Doge",
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8711),
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8711)
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 9,
                             BrandName = "Ferrari",
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8712),
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8712)
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 10,
                             BrandName = "Lamborghini",
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8712),
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8713)
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 
@@ -456,64 +458,64 @@ namespace Persistence.Migrations
                         {
                             Id = 1,
                             Color = "Blue",
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8932),
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8932)
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 2,
                             Color = "Red",
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8933),
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8933)
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 3,
                             Color = "Yellow",
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8934),
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8934)
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 4,
                             Color = "White",
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8935),
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8935)
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 5,
                             Color = "Black",
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8935),
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8936)
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 6,
                             Color = "Green",
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8936),
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8936)
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 7,
                             Color = "Metalic Grey",
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8937),
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8937)
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 8,
                             Color = "Midnight Purple",
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8978),
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8978)
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 9,
                             Color = "Orange",
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8980),
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 506, DateTimeKind.Utc).AddTicks(8980)
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 
@@ -543,23 +545,23 @@ namespace Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(1072),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FuelType = "Gasoline",
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(1073)
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(1074),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FuelType = "Motorine",
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(1074)
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(1075),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FuelType = "Electrical",
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(1075)
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 
@@ -592,26 +594,26 @@ namespace Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(1201),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GearType = "Manual",
                             Speed = 6,
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(1201)
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(1203),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GearType = "Automatic",
                             Speed = 6,
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(1203)
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(1204),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             GearType = "Half-Automatic",
                             Speed = 6,
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(1204)
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 
@@ -647,65 +649,65 @@ namespace Persistence.Migrations
                         {
                             Id = 1,
                             BrandId = 1,
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(886),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ModelName = "A4",
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(887)
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 2,
                             BrandId = 2,
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(888),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ModelName = "Focus RS",
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(889)
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 3,
                             BrandId = 3,
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(889),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ModelName = "GTR",
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(889)
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 4,
                             BrandId = 4,
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(890),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ModelName = "Supra",
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(890)
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 5,
                             BrandId = 5,
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(891),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ModelName = "M5",
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(891)
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 6,
                             BrandId = 6,
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(891),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ModelName = "AMG GTR",
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(891)
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 7,
                             BrandId = 7,
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(892),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ModelName = "GT3",
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(892)
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 8,
                             BrandId = 8,
-                            CreatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(893),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ModelName = "Charger",
-                            UpdatedDate = new DateTime(2023, 2, 4, 13, 30, 43, 507, DateTimeKind.Utc).AddTicks(893)
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 

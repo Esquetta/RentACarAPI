@@ -1,11 +1,5 @@
 ﻿using Core.Persistence.Repositories;
 using Domain.Enums;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
@@ -13,8 +7,8 @@ namespace Domain.Entities
     {
         public int BrandId { get; set; }
         public int? CarModelId { get; set; }
-        public short ProductionDate { get; set; }
-        public decimal Price { get; set; }
+        public short ProductionYear { get; set; }
+        public double Price { get; set; }
         public int HorsePower { get; set; }
         public int CarColorId { get; set; }
         public int GearBoxId { get; set; }
@@ -36,11 +30,11 @@ namespace Domain.Entities
         {
             
         }
-        public Car(int Id, int brandId,int carModelId,short productionDate, decimal price, int horsePower, int carColorId, int gearBoxId, int fuelId, int miles, string Description,CarState carState) : this()
+        public Car(int Id, int brandId,int carModelId,short ProductionYear, double price, int horsePower, int carColorId, int gearBoxId, int fuelId, int miles, string Description,CarState carState) : this()
         {
             this.Id = Id;
             this.BrandId = brandId;
-            this.ProductionDate = productionDate;
+            this.ProductionYear = ProductionYear;
             this.Price = price;
             this.HorsePower = horsePower;
             this.CarColorId = carColorId;
