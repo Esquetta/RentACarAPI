@@ -47,7 +47,7 @@ namespace Persistence.Context
                     optionsBuilder.UseSqlServer(Configuration.GetConnectionString("RentACar")));
 
         }
-        //public override async Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default)
+        //public override async  Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default)
         //{
         //    IEnumerable<EntityEntry<Entity>> datas = ChangeTracker.Entries<Entity>().Where(e => e.State == EntityState.Added || e.State == EntityState.Modified);
 
@@ -62,7 +62,7 @@ namespace Persistence.Context
         //            case EntityState.Added: item.Entity.CreatedDate = DateTime.Now; break;
         //        }
         //    }
-        //    return await base.SaveChangesAsync(cancellationToken);
+        //    return await  base.SaveChangesAsync(cancellationToken);
         //}
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

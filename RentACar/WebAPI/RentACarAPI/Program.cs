@@ -20,7 +20,6 @@ builder.Services.AddCors(c =>
 builder.Services.AddApplicationServices();
 builder.Services.AddPersistenceServices(builder.Configuration);
 //builder.Services.AddInfrastructureServices();
-
 builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddControllers();

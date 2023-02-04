@@ -13,6 +13,7 @@ namespace Application.Featues.Cars.Dtos
         public int BrandId { get; set; }
         public int? CarModelId { get; set; }
         public short ProductionYear { get; set; }
+        public string? Plate { get; set; }
         public double Price { get; set; }
         public int HorsePower { get; set; }
         public int CarColorId { get; set; }

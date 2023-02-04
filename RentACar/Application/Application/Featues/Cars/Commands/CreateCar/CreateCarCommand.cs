@@ -20,6 +20,7 @@ namespace Application.Featues.Cars.Commands.CreateCar
         public short ProductionDate { get; set; }
         public double Price { get; set; }
         public int HorsePower { get; set; }
+        public string? Plate { get; set; }
         public int CarColorId { get; set; }
         public int GearBoxId { get; set; }
         public int FuelId { get; set; }
