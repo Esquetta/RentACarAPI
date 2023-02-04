@@ -2,15 +2,12 @@
 using Application.Featues.Rents.Commands.DeleteRent;
 using Application.Featues.Rents.Commands.UpdateRent;
 using Application.Featues.Rents.Dtos;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace RentACarAPI.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    [Authorize(Roles ="Manager")]
     public class RentController : BaseController
     {
         [HttpPost]

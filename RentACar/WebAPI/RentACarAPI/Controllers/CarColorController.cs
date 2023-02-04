@@ -5,16 +5,12 @@ using Application.Featues.CarColors.Dtos;
 using Application.Featues.CarColors.Models;
 using Application.Featues.CarColors.Queries.GetlistCarColors;
 using Core.Application.Requests;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Data;
 
 namespace RentACarAPI.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    [Authorize(Roles = "Manager")]
     public class CarColorController : BaseController
     {
 

@@ -1,18 +1,13 @@
 ﻿using Application.Featues.RentDetails.Commands.CreateRentDetail;
 using Application.Featues.RentDetails.Commands.DeleteRentDetail;
-using Application.Featues.RentDetails.Commands.UpdateRentDetail;
 using Application.Featues.RentDetails.Dtos;
 using Application.Featues.RentDetails.Queries.GetRentById;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Data;
 
 namespace RentACarAPI.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    [Authorize(Roles = "Manager")]
     public class RentDetailController : BaseController
     {
         [HttpPost]

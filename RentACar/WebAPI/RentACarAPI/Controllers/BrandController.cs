@@ -15,7 +15,6 @@ namespace RentACarAPI.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    [Authorize(Roles ="Manager")]
     public class BrandController : BaseController
     {
 

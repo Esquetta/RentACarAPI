@@ -4,16 +4,12 @@ using Application.Featues.Fuels.Dtos;
 using Application.Featues.Fuels.Models;
 using Application.Featues.Fuels.Queries.GetListFuels;
 using Core.Application.Requests;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Data;
 
 namespace RentACarAPI.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    [Authorize(Roles = "Manager")]
     public class FuelController : BaseController
     {
         [HttpGet]

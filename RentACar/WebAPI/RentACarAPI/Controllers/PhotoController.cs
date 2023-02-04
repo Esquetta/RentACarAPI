@@ -2,7 +2,6 @@
 using Application.Featues.Photos.Commands.DeletePhoto;
 using Application.Featues.Photos.Commands.UpdatePhoto;
 using Application.Featues.Photos.Dtos;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace RentACarAPI.Controllers

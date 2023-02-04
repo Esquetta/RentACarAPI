@@ -5,16 +5,12 @@ using Application.Featues.GearBoxses.Dtos;
 using Application.Featues.GearBoxses.Models;
 using Application.Featues.GearBoxses.Queries.GetListGearBoxses;
 using Core.Application.Requests;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Data;
 
 namespace RentACarAPI.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    [Authorize(Roles = "Manager")]
     public class GearBoxController : BaseController
     {
         [HttpGet]

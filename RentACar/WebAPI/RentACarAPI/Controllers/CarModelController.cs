@@ -5,16 +5,12 @@ using Application.Featues.CarModels.Dtos;
 using Application.Featues.CarModels.Models;
 using Application.Featues.CarModels.Queries.GetListCarModelQuery;
 using Core.Application.Requests;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Data;
 
 namespace RentACarAPI.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    [Authorize(Roles = "Manager")]
     public class CarModelController : BaseController
     {
 

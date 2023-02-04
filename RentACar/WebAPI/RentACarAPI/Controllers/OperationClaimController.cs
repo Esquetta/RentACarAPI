@@ -5,16 +5,13 @@ using Application.Featues.OperationClaims.Dtos;
 using Application.Featues.OperationClaims.Models;
 using Application.Featues.OperationClaims.Queries.GetListOperationClaimQuery;
 using Core.Application.Requests;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace RentACarAPI.Controllers
 {
-    
+
     [Route("api/[controller]/[action]")]
     [ApiController]
-    [Authorize(Roles ="Moderator")]
     public class OperationClaimController : BaseController
     {
 
