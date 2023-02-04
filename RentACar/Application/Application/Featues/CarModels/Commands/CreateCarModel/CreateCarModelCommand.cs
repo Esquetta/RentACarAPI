@@ -33,9 +33,9 @@ namespace Application.Featues.CarModels.Commands.CreateCarModel
             {
                 await carModelBusinessRules.CarColorCannotBeDuplicatedWhenInserted(request.ModelName);
 
-                CarModel carModel = mapper.Map<CarModel>(request);
+                Model carModel = mapper.Map<Model>(request);
 
-                CarModel createdCarModel = await carModelRepository.AddAsync(carModel);
+                Model createdCarModel = await carModelRepository.AddAsync(carModel);
 
                 CreatedCarModelDto createdCarModelDto= mapper.Map<CreatedCarModelDto>(createdCarModel);
 

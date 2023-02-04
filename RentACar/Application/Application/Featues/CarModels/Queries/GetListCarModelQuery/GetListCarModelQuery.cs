@@ -29,7 +29,7 @@ namespace Application.Featues.CarModels.Queries.GetListCarModelQuery
 
             public async Task<CarModelListViewModel> Handle(GetListCarModelQuery request, CancellationToken cancellationToken)
             {
-                IPaginate<CarModel> paginate = await carModelRepository.GetListAsync(index:request.PageRequest.Page,size:request.PageRequest.PageSize);
+                IPaginate<Model> paginate = await carModelRepository.GetListAsync(index:request.PageRequest.Page,size:request.PageRequest.PageSize);
 
                 CarModelListViewModel carModelListViewModel  =mapper.Map<CarModelListViewModel>(paginate);
 

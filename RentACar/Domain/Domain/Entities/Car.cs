@@ -29,7 +29,7 @@ namespace Domain.Entities
         public virtual CarColor CarColor { get; set; }
         public virtual GearBox GearBox { get; set; }
         public virtual Fuel Fuel { get; set; }
-        public virtual CarModel CarModel { get; set; }
+        public virtual Model CarModel { get; set; }
 
 
         public Car()

@@ -31,9 +31,9 @@ namespace Application.Featues.CarModels.Commands.DeleteCarModel
 
             public async Task<DeletedCarModelDto> Handle(DeleteCarModelCommand request, CancellationToken cancellationToken)
             {
-                CarModel carModel = await carModelBusinessRules.IsCarModelExists(request.Id);
+                Model carModel = await carModelBusinessRules.IsCarModelExists(request.Id);
 
-                CarModel deletedCarModel = await carModelRepository.DeleteAsync(carModel);
+                Model deletedCarModel = await carModelRepository.DeleteAsync(carModel);
 
                 DeletedCarModelDto deletedCarModelDto = mapper.Map<DeletedCarModelDto>(deletedCarModel);
 

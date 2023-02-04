@@ -20,16 +20,16 @@ namespace Application.Featues.CarModels.Profiles
     {
         public Profiles()
         {
-            CreateMap<CarModel, CreatedCarModelDto>().ReverseMap();
-            CreateMap<CarModel, CreateCarModelCommand>().ReverseMap();
+            CreateMap<Model, CreatedCarModelDto>().ReverseMap();
+            CreateMap<Model, CreateCarModelCommand>().ReverseMap();
 
-            CreateMap<CarModel, UpdatedCarModelDto>().ReverseMap();
-            CreateMap<CarModel, UpdateCarModelCommand>().ReverseMap();
+            CreateMap<Model, UpdatedCarModelDto>().ReverseMap();
+            CreateMap<Model, UpdateCarModelCommand>().ReverseMap();
 
-            CreateMap<CarModel, DeletedCarModelDto>().ReverseMap();
+            CreateMap<Model, DeletedCarModelDto>().ReverseMap();
 
-            CreateMap<CarModelListViewDto,CarModel>().ReverseMap();
-            CreateMap<CarModelListViewModel, IPaginate<CarModel>>().ReverseMap();
+            CreateMap<CarModelListViewDto,Model>().ReverseMap();
+            CreateMap<CarModelListViewModel, IPaginate<Model>>().ReverseMap();
 
         }
     }

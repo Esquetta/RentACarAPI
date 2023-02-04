@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Persistence.Repositories
 {
-    public class CarModelRepository : EfRepositoryBase<CarModel, BaseDbContext>, ICarModelRepository
+    public class CarModelRepository : EfRepositoryBase<Model, BaseDbContext>, ICarModelRepository
     {
         public CarModelRepository(BaseDbContext context) : base(context)
         {

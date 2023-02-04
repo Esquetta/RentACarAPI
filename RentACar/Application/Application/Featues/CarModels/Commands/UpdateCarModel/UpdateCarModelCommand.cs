@@ -35,9 +35,9 @@ namespace Application.Featues.CarModels.Commands.UpdateCarModel
             {
                 await carModelBusinessRules.CarColorCannotBeDuplicatedWhenUpdated(request.ModelName);
 
-                CarModel carModel = mapper.Map<CarModel>(request);
+                Model carModel = mapper.Map<Model>(request);
 
-                CarModel updatedCarModel = await carModelRepository.UpdateAsync(carModel);
+                Model updatedCarModel = await carModelRepository.UpdateAsync(carModel);
 
                 UpdatedCarModelDto updatedCarModelDto= mapper.Map<UpdatedCarModelDto>(updatedCarModel);
 

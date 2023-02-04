@@ -5,6 +5,8 @@ namespace Core.Persistence.Dynamic;
 
 public static class IQueryableDynamicFilterExtensions
 {
+    private static readonly string[] _orders = { "asc", "desc" };
+    private static readonly string[] _logics = { "and", "or" };
     private static readonly IDictionary<string, string>
         Operators = new Dictionary<string, string>
         {
@@ -36,7 +38,7 @@ public static class IQueryableDynamicFilterExtensions
         IList<Filter> filters = GetAllFilters(filter);
         string?[] values = filters.Select(f => f.Value).ToArray();
         string where = Transform(filter, filters);
-        queryable = queryable.Where(where, values);
+        if (!string.IsNullOrEmpty(where) && values != null) queryable = queryable.Where(where, values);
 
         return queryable;
     }
@@ -44,6 +46,13 @@ public static class IQueryableDynamicFilterExtensions
     private static IQueryable<T> Sort<T>(
         IQueryable<T> queryable, IEnumerable<Sort> sort)
     {
+
+        foreach (var item in sort)
+        {
+            if (string.IsNullOrEmpty(item.Field)) throw new ArgumentException("Invlaid field.");
+            if (string.IsNullOrEmpty(item.Dir) || !_orders.Contains(item.Dir)) throw new ArgumentException("Invalid Order Type");
+        }
+
         if (sort.Any())
         {
             string ordering = string.Join(",", sort.Select(s => $"{s.Field} {s.Dir}"));
@@ -70,6 +79,9 @@ public static class IQueryableDynamicFilterExtensions
 
     public static string Transform(Filter filter, IList<Filter> filters)
     {
+        if (string.IsNullOrEmpty(filter.Field)) throw new ArgumentException("Invalid Field");
+        if (string.IsNullOrEmpty(filter.Operator) || !Operators.ContainsKey(filter.Operator)) throw new ArgumentException("Invalid Operator"); ;
+
         int index = filters.IndexOf(filter);
         string comparison = Operators[filter.Operator];
         StringBuilder where = new();

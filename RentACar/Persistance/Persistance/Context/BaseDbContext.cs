@@ -18,7 +18,7 @@ namespace Persistence.Context
     {
         public DbSet<Car> Cars { get; set; }
         public DbSet<Brand> Brands { get; set; }
-        public DbSet<CarModel> CarModels { get; set; }
+        public DbSet<Model> CarModels { get; set; }
         public DbSet<CarColor> CarColors { get; set; }
         public DbSet<GearBox> GearBoxes { get; set; }
         public DbSet<Fuel> Fuels { get; set; }

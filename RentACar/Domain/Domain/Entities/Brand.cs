@@ -6,7 +6,7 @@ namespace Domain.Entities
     {
 
         public string BrandName { get; set; }
-        public virtual List<CarModel> CarModels { get; set; }
+        public virtual List<Model> CarModels { get; set; }
         public virtual List<Car> Cars { get; set; }
 
         public Brand()

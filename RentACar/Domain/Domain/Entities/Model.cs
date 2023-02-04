@@ -2,7 +2,7 @@
 
 namespace Domain.Entities
 {
-    public class CarModel:Entity
+    public class Model:Entity
     {
         public string ModelName { get; set; }
         public int BrandId { get; set; }
@@ -13,11 +13,11 @@ namespace Domain.Entities
 
 
 
-        public CarModel()
+        public Model()
         {
 
         }
-        public CarModel(int id,string modelName,int brandId)
+        public Model(int id,string modelName,int brandId)
         {
             this.Id= id;
             this.ModelName= modelName;
