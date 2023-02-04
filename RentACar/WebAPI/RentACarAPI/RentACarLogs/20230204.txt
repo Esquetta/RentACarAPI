@@ -1,0 +1,2 @@
+2023-02-04 17:55:05.697 +03:00 [Information] {"FullName":null,"MethodName":"<Handle>b__2","User":"?","Parameters":[{"Name":null,"Value":{"PageRequest":{"Page":0,"PageSize":10}},"Type":"GetListBrandQuery"}]}
+2023-02-04 17:57:01.633 +03:00 [Information] {"FullName":null,"MethodName":"<Handle>b__2","User":"?","Parameters":[{"Name":null,"Value":{"PageRequest":{"Page":0,"PageSize":20}},"Type":"GetListBrandQuery"}]}

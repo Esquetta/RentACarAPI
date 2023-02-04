@@ -47,23 +47,23 @@ namespace Persistence.Context
                     optionsBuilder.UseSqlServer(Configuration.GetConnectionString("RentACar")));
 
         }
-        //public override async  Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default)
-        //{
-        //    IEnumerable<EntityEntry<Entity>> datas = ChangeTracker.Entries<Entity>().Where(e => e.State == EntityState.Added || e.State == EntityState.Modified);
+        public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        {
+            IEnumerable<EntityEntry<Entity>> datas = ChangeTracker.Entries<Entity>().Where(e => e.State == EntityState.Added || e.State == EntityState.Modified);
 
-        //    foreach (var item in datas)
-        //    {
-        //        switch (item.State)
-        //        {
+            foreach (var item in datas)
+            {
+                switch (item.State)
+                {
 
-        //            case EntityState.Modified:
-        //                item.Entity.UpdatedDate = DateTime.Now;
-        //                break;
-        //            case EntityState.Added: item.Entity.CreatedDate = DateTime.Now; break;
-        //        }
-        //    }
-        //    return await  base.SaveChangesAsync(cancellationToken);
-        //}
+                    case EntityState.Modified:
+                        item.Entity.UpdatedDate = DateTime.Now;
+                        break;
+                    case EntityState.Added: item.Entity.CreatedDate = DateTime.Now; break;
+                }
+            }
+            return await base.SaveChangesAsync(cancellationToken);
+        }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
