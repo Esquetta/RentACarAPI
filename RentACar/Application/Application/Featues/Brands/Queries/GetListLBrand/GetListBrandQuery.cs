@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace Application.Featues.Brands.Queries.GetListLBrand
 {
-    public class GetListBrandQuery:IRequest<BrandListViewModel>,ILoggableRequest
+    public class GetListBrandQuery:IRequest<BrandListViewModel>
     {
         public PageRequest  PageRequest { get; set; }
 
