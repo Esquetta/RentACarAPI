@@ -21,4 +21,7 @@ public interface IRepository<T> : IQuery<T> where T : class
     T Add(T entity);
     T Update(T entity);
     T Delete(T entity);
+    List<T> AddRange(List<T> entityList);
+    List<T> UpdateRange(List<T> entityList);
+    List<T> DeleteRange(List<T> entityList);
 }

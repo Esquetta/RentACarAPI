@@ -22,4 +22,7 @@ public interface IAsyncRepository<T> : IQuery<T> where T : class
     Task<T> AddAsync(T entity);
     Task<T> UpdateAsync(T entity);
     Task<T> DeleteAsync(T entity);
+    Task<List<T>> AddRangeAsync(List<T> entityList);
+    Task<List<T>> UpdateRangeAsync(List<T> entityList);
+    Task<List<T>> DeleteRangeAsync(List<T> entityList);
 }
