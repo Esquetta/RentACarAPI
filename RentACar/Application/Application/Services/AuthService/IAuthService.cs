@@ -20,5 +20,15 @@ namespace Application.Services.AuthService
         public Task RevokeRefreshToken(RefreshToken refreshToken, string IpAddress,string reason,string? replacedByToken);
         public Task RevokeDescendantRefreshTokens(RefreshToken token, string ipAddress, string reason);
         public Task<RefreshToken> RotateRefreshToken(User user,RefreshToken refreshToken,string ipAddress);
+
+        public Task<EmailAuthenticator> CreateEmailAuthenticator(User user);
+
+        public Task<OtpAuthenticator> CreateOtpAuthenticator(User user);
+
+        public Task<string> ConvertOtpSecretKeyToString(byte[] secretBytes);
+
+        public Task SendAuthenticatorCode(User user);
+
+        public Task VerifyAuthenticatorCode(User user,string code);
     }
 }
