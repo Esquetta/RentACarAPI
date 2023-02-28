@@ -15,6 +15,8 @@ public class JwtHelper : ITokenHelper
     private readonly TokenOptions _tokenOptions;
     private DateTime _accessTokenExpiration;
 
+    public int RefreshTokenTTLOption => _tokenOptions.RefreshTokenTTL;
+
     public JwtHelper(IConfiguration configuration)
     {
         Configuration = configuration;
@@ -74,5 +76,12 @@ public class JwtHelper : ITokenHelper
         claims.AddName($"{user.FirstName} {user.LastName}");
         claims.AddRoles(operationClaims.Select(c => c.Name).ToArray());
         return claims;
+    }
+    private string generateRandomRefreshToken()
+    {
+        byte[] bytes= new byte[32];
+        using RandomNumberGenerator randomNumberGenerator = RandomNumberGenerator.Create();
+        randomNumberGenerator.GetBytes(bytes);
+        return Convert.ToBase64String(bytes);
     }
 }

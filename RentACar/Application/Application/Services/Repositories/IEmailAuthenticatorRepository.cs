@@ -10,5 +10,6 @@ namespace Application.Services.Repositories
 {
     public interface IEmailAuthenticatorRepository:IRepository<EmailAuthenticator>,IAsyncRepository<EmailAuthenticator>
     {
+        Task<ICollection<EmailAuthenticator>> DeleteAllNonVerifiedAsync(User user);
     }
 }

@@ -15,5 +15,14 @@ namespace Persistence.Repositories
         public EmailAuthenticatorRepository(BaseDbContext context) : base(context)
         {
         }
+
+        public async Task<ICollection<EmailAuthenticator>> DeleteAllNonVerifiedAsync(User user)
+        {
+            List<EmailAuthenticator> authentications = Query().Where(x=>x.UserId== user.Id && x.IsVerified==false).ToList();
+
+            await DeleteRangeAsync(authentications);
+
+            return authentications;
+        }
     }
 }

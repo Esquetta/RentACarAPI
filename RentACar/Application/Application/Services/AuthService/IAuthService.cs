@@ -14,5 +14,11 @@ namespace Application.Services.AuthService
         public Task<RefreshToken> CreateRefreshToken(User user, string IpAddress);
 
         public Task<RefreshToken> AddRefreshToken(RefreshToken refreshToken);
+
+        public Task DeleteOldActiveRefreshTokens(User user);
+
+        public Task RevokeRefreshToken(RefreshToken refreshToken, string IpAddress,string reason,string? replacedByToken);
+        public Task RevokeDescendantRefreshTokens(RefreshToken token, string ipAddress, string reason);
+        public Task<RefreshToken> RotateRefreshToken(User user,RefreshToken refreshToken,string ipAddress);
     }
 }

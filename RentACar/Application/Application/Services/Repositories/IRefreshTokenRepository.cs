@@ -10,5 +10,6 @@ namespace Application.Services.Repositories
 {
     public interface IRefreshTokenRepository:IRepository<RefreshToken>,IAsyncRepository<RefreshToken>
     {
+        Task<ICollection<RefreshToken>> GetAllOldActiveRefreshTokenAsync(User user,int ttl);
     }
 }
