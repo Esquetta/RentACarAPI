@@ -38,6 +38,8 @@ namespace Application.Featues.Auths.Commands.VerifiyEmailAuthenticator
                 emailAuthenticator.ActivationKey = null;
                 emailAuthenticator.User.AuthenticatorType = Core.Security.Enums.AuthenticatorType.Email;
                 await emailAuthenticatorRepository.UpdateAsync(emailAuthenticator);
+
+                return Unit.Value;
             }
         }
     }
