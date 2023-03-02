@@ -30,7 +30,7 @@ namespace Persistence
             services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
             services.AddScoped<IOperationClaimRepository, OperationClaimRepostiory>();
             services.AddScoped<IEmailAuthenticatorRepository, EmailAuthenticatorRepository>();
-            services.AddScoped<IOtpAuthenticatorRepository,OtpAuthenticatorRepository>();
+            services.AddScoped<IOtpAuthenticatorRepository, OtpAuthenticatorRepository>();
             services.AddDbContext<BaseDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("RentACar")));
 
             return services;
