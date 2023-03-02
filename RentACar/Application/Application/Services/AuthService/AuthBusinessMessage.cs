@@ -15,6 +15,7 @@ namespace Application.Services.AuthService
         public const string RefreshTokenNotFound = "Refresh token not found";
         public const string RefreshTokenNotActive = "Refresh Token not active";
         public const string UserHasAuthenticator = "User has authenticator";
+
         public static string AuthenticatorCodeTextBody(string authenticatorCode)
             => $"Your Two factor authcode: {authenticatorCode.Substring(startIndex: 0, length: 3)} {authenticatorCode.Substring(3)}";
     }
