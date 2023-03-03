@@ -10,5 +10,6 @@ namespace Application.Services.Repositories
 {
     public interface IOtpAuthenticatorRepository:IRepository<OtpAuthenticator>,IAsyncRepository<OtpAuthenticator>
     {
+        Task<ICollection<OtpAuthenticator>> DeleteAllNonVerifiedAsync(User user);
     }
 }

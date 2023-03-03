@@ -15,5 +15,13 @@ namespace Persistence.Repositories
         public OtpAuthenticatorRepository(BaseDbContext context) : base(context)
         {
         }
+
+        public async Task<ICollection<OtpAuthenticator>> DeleteAllNonVerifiedAsync(User user)
+        {
+           var nonVerifieds= Query().Where(x => x.IsVerified == false && x.UserId == user.Id).ToList();
+           await DeleteRangeAsync(nonVerifieds);
+
+            return nonVerifieds;
+        }
     }
 }
