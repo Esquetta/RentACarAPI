@@ -109,7 +109,7 @@ namespace Application.Services.AuthService
         public async Task<RefreshToken> RotateRefreshToken(User user, RefreshToken refreshToken, string ipAddress)
         {
             RefreshToken newToken = tokenHelper.CreateRefreshToken(user, ipAddress);
-            await RevokeRefreshToken(refreshToken, "New Refresh Token Created.", newToken.Token);
+            await RevokeRefreshToken(refreshToken,ipAddress,"New Refresh Token Created.", newToken.Token);
             await AddRefreshToken(newToken);
             return newToken;
         }

@@ -1,5 +1,6 @@
 ﻿using Application.Featues.Auth.Commands.Register;
 using Application.Featues.Auth.Dtos;
+using Application.Featues.Auths.Dtos;
 using AutoMapper;
 using Core.Security.Dtos;
 using Core.Security.Entities;
@@ -20,8 +21,9 @@ namespace Application.Featues.Auths.Profiles
 
             CreateMap<User, UserForRegisterDto>().ReverseMap();
           
-
             CreateMap<AccessToken, LoggedUserDto>().ReverseMap();
+
+            CreateMap<RefreshToken, RevokedDto>().ReverseMap();
         }
     }
 }
