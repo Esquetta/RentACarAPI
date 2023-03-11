@@ -1,14 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Core.Security.Entities;
+using Core.Security.Enums;
+using Core.Security.JWT;
 
 namespace Application.Featues.Auth.Dtos
 {
     public class LoggedUserDto
     {
-        public string Token { get; set; }
-        public DateTime Expiration { get; set; }
+        public AccessToken? AccessToken { get; set; }
+        public RefreshToken? RefreshToken { get; set; }
+        public AuthenticatorType? RequiredAuthenticatorType { get; set; }
+
+        public class LoggedHttpResponse
+        {
+            public AccessToken? AccessToken { get; set; }
+            public AuthenticatorType? RequiredAuthenticatorType { get; set; }
+        }
+
+        public LoggedHttpResponse ToHttpResponse()
+        {
+            return new()
+            {
+                AccessToken = AccessToken,
+                RequiredAuthenticatorType = RequiredAuthenticatorType
+            };
+        }
     }
 }
