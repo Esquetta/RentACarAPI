@@ -1,4 +1,5 @@
 ﻿using Application.Featues.Auth.Dtos;
+using Application.Featues.Auths.Dtos;
 using Application.Featues.Auths.Rules;
 using Application.Services.AuthService;
 using Application.Services.Repositories;
@@ -44,7 +45,11 @@ namespace Application.Featues.Auths.Commands.Refresh
                 AccessToken createdAccessToken = await authService.CreateAccessToken(refreshToken.User);
                 RefreshToken createdRefreshToken = await authService.RotateRefreshToken(refreshToken.User, refreshToken, request.IpAddress);
 
-                return new RefreshTokenDto() { AccessToken = createdAccessToken, RefreshToken = createdRefreshToken };
+                return new RefreshTokenDto()
+                {
+                    AccessToken = createdAccessToken,
+                    RefreshToken = new CreatedRefreshTokenDTO() { RefreshToken = createdRefreshToken.Token, Expiration = createdRefreshToken.Expires }
+                };
 
 
             }

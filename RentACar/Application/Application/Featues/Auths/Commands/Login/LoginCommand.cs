@@ -1,4 +1,5 @@
 ﻿using Application.Featues.Auth.Dtos;
+using Application.Featues.Auths.Dtos;
 using Application.Featues.Auths.Rules;
 using Application.Services.AuthService;
 using Application.Services.Repositories;
@@ -76,7 +77,7 @@ namespace Application.Featues.Auth.Commands.Login
 
 
                 loggedUserDto.AccessToken = accessToken;
-                loggedUserDto.RefreshToken= refreshToken; ;
+                loggedUserDto.RefreshToken = new CreatedRefreshTokenDTO() { RefreshToken = refreshToken.Token, Expiration = refreshToken.Expires };
 
                 return loggedUserDto;
             }

@@ -1,4 +1,5 @@
-﻿using Core.Security.Entities;
+﻿using Application.Featues.Auths.Dtos;
+using Core.Security.Entities;
 using Core.Security.JWT;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,6 @@ namespace Application.Featues.Auth.Dtos
     public class RefreshTokenDto
     {
         public AccessToken AccessToken { get; set; }
-        public RefreshToken RefreshToken { get; set; }
+        public CreatedRefreshTokenDTO RefreshToken { get; set; }
     }
 }

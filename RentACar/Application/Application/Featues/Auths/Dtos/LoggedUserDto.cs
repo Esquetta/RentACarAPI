@@ -1,4 +1,5 @@
-﻿using Core.Security.Entities;
+﻿using Application.Featues.Auths.Dtos;
+using Core.Security.Entities;
 using Core.Security.Enums;
 using Core.Security.JWT;
 
@@ -7,7 +8,7 @@ namespace Application.Featues.Auth.Dtos
     public class LoggedUserDto
     {
         public AccessToken? AccessToken { get; set; }
-        public RefreshToken? RefreshToken { get; set; }
+        public CreatedRefreshTokenDTO? RefreshToken { get; set; }
         public AuthenticatorType? RequiredAuthenticatorType { get; set; }
 
         public class LoggedHttpResponse
