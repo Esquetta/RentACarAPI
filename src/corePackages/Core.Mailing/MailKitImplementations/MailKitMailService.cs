@@ -15,7 +15,7 @@ public class MailKitMailService : IMailService
         _mailSettings = configuration.GetSection("MailSettings").Get<MailSettings>();
     }
 
-    public void SendMail(Mail mail)
+    public async Task SendMail(Mail mail)
     {
         MimeMessage email = new();
 
@@ -38,9 +38,9 @@ public class MailKitMailService : IMailService
         email.Body = bodyBuilder.ToMessageBody();
 
         using SmtpClient smtp = new();
-        smtp.Connect(_mailSettings.Server, _mailSettings.Port);
+        await smtp.ConnectAsync(_mailSettings.Server, _mailSettings.Port);
         //smtp.Authenticate(_mailSettings.UserName, _mailSettings.Password);
-        smtp.Send(email);
-        smtp.Disconnect(true);
+        await smtp.SendAsync(email);
+        await smtp.DisconnectAsync(true);
     }
 }

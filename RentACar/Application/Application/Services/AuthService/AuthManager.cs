@@ -41,7 +41,7 @@ namespace Application.Services.AuthService
 
         public Task<string> ConvertOtpSecretKeyToString(byte[] secretBytes)
         {
-           return  otpAuthenticatorHelper.ConvertSecretKeyToString(secretBytes);
+            return otpAuthenticatorHelper.ConvertSecretKeyToString(secretBytes);
         }
 
         public async Task<AccessToken> CreateAccessToken(User user)
@@ -67,9 +67,9 @@ namespace Application.Services.AuthService
         {
             return new OtpAuthenticator()
             {
-                UserId=user.Id,
-                IsVerified= false,
-                SecretKey=await otpAuthenticatorHelper.GenerateSecretKey()
+                UserId = user.Id,
+                IsVerified = false,
+                SecretKey = await otpAuthenticatorHelper.GenerateSecretKey()
             };
         }
 
@@ -109,7 +109,7 @@ namespace Application.Services.AuthService
         public async Task<RefreshToken> RotateRefreshToken(User user, RefreshToken refreshToken, string ipAddress)
         {
             RefreshToken newToken = tokenHelper.CreateRefreshToken(user, ipAddress);
-            await RevokeRefreshToken(refreshToken,ipAddress,"New Refresh Token Created.", newToken.Token);
+            await RevokeRefreshToken(refreshToken, ipAddress, "New Refresh Token Created.", newToken.Token);
             await AddRefreshToken(newToken);
             return newToken;
         }
@@ -130,20 +130,21 @@ namespace Application.Services.AuthService
             EmailAuthenticator emailAuthenticator = await emailAuthenticatorRepository.GetAsync(x => x.UserId == user.Id);
             string authCode = await emailAuthenticatorHelper.CreateEmailActivationCode();
 
-            emailAuthenticator.ActivationKey=authCode;
+            emailAuthenticator.ActivationKey = authCode;
 
             await emailAuthenticatorRepository.UpdateAsync(emailAuthenticator);
 
-            Mail mail = new() {
-            
-                ToFullName=$"{user.FirstName} {user.LastName}",
-                ToEmail=user.Email,
-                Subject=AuthBusinessMessage.AuthenticatorCodeSubject,
-                TextBody=AuthBusinessMessage.AuthenticatorCodeTextBody(authCode)
+            Mail mail = new()
+            {
+
+                ToFullName = $"{user.FirstName} {user.LastName}",
+                ToEmail = user.Email,
+                Subject = AuthBusinessMessage.AuthenticatorCodeSubject,
+                TextBody = AuthBusinessMessage.AuthenticatorCodeTextBody(authCode)
 
             };
 
-            mailService.SendMail(mail);
+            await mailService.SendMail(mail);
 
         }
 
@@ -153,7 +154,7 @@ namespace Application.Services.AuthService
             {
 
                 case Core.Security.Enums.AuthenticatorType.Email:
-                    await verifyEmailAuthenticatorCode(user,code);
+                    await verifyEmailAuthenticatorCode(user, code);
                     break;
                 case Core.Security.Enums.AuthenticatorType.Otp:
                     await verifyOtpAuthenticatorCode(user, code);
@@ -165,7 +166,7 @@ namespace Application.Services.AuthService
 
         private async Task verifyOtpAuthenticatorCode(User user, string codeToVerify)
         {
-            OtpAuthenticator otpAuthenticator = await otpAuthenticatorRepository.GetAsync(x=>x.UserId==user.Id);
+            OtpAuthenticator otpAuthenticator = await otpAuthenticatorRepository.GetAsync(x => x.UserId == user.Id);
 
             bool result = await otpAuthenticatorHelper.VerifyCode(otpAuthenticator.SecretKey, codeToVerify);
 
@@ -175,9 +176,9 @@ namespace Application.Services.AuthService
 
         private async Task verifyEmailAuthenticatorCode(User user, string code)
         {
-            EmailAuthenticator emailAuthenticator = await emailAuthenticatorRepository.GetAsync(x=>x.UserId==user.Id);
+            EmailAuthenticator emailAuthenticator = await emailAuthenticatorRepository.GetAsync(x => x.UserId == user.Id);
 
-            if(emailAuthenticator.ActivationKey!=null)
+            if (emailAuthenticator.ActivationKey != code)
                 throw new BusinessException(AuthBusinessMessage.InvalidAuthenticatorCode);
 
             await emailAuthenticatorRepository.UpdateAsync(emailAuthenticator);
